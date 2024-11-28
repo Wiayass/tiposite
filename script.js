@@ -47,6 +47,10 @@ searchBar.addEventListener("input", () => {
                 resultsContainer.appendChild(div);
             });
         } else {
+            const noResultsDiv = document.createElement("div");
+            noResultsDiv.textContent = "Нет результатов";
+            
+            resultsContainer.appendChild(noResultsDiv);
         }
 
         resultsContainer.style.display = "block"; // Показать подсказки
@@ -54,6 +58,9 @@ searchBar.addEventListener("input", () => {
         resultsContainer.style.display = "none"; // Скрыть подсказки
     }
 });
+
+
+
 
 // Функция для добавления продукта в корзину
 function addProductToCart(product) {
