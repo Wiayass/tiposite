@@ -79,7 +79,14 @@ getRecipesBtn.addEventListener("click", () => {
 
 
 
+// Получаем элементы
+const menuToggle1 = document.getElementById('menu-toggle');
+const navbarLinks1 = document.getElementById('navbar-links');
 
+// Добавляем обработчик клика
+menuToggle1.addEventListener('click', () => {
+    navbarLinks1.classList.toggle('active');
+});
 
 
 
