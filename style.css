@@ -683,6 +683,7 @@ body {
         flex-direction: row;
         justify-content: space-between;
         padding: 0.5rem 1rem;
+        font-family: "Montserrat", sans-serif;
     }
 
     .navbar-logo img {
@@ -709,13 +710,18 @@ body {
         transform: translateY(-20px); /* Слегка смещаем меню вверх */
         pointer-events: none; /* Блокируем клики, пока меню скрыто */
         transition: all;
+        
     }
 
     .navbar-links a {
         padding: 0.5rem 1rem;
-        color: white;
+        color: #fff;
         text-align: center;
         display: block;
+    }
+
+    .navbar-links a:hover{
+        color: #F4A261;
     }
 
     .navbar-links.active {
