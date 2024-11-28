@@ -85,9 +85,9 @@ const navbarLinks1 = document.getElementById('navbar-links1');
 
 // Добавляем обработчик клика
 menuToggle1.addEventListener('click', () => {
-    navbarLinks1.classList.toggle('active');
+    menuToggle1.classList.toggle('active'); // Анимация иконки
+    navbarLinks1.classList.toggle('active'); // Плавное меню
 });
-
 
 
 // Закрытие списка подсказок при клике вне поля
