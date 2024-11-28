@@ -24,7 +24,6 @@ body {
     background-color: #F5E8D4;
 }
 
-/* Навбар */
 .navbar {
     position: absolute;
     top: 0;
@@ -40,12 +39,7 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-/* Иконка меню */
-.navbar-menu-icon {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-}
+
 
 .navbar-logo {
     font-size: 1.5rem;
@@ -70,33 +64,91 @@ body {
     color: #a2ae88;
 }
 
-/* Выпадающее меню для мобильных */
-.navbar-links.mobile {
-    display: none;
-    flex-direction: column;
-    background-color: #133215;
-    position: absolute;
-    top: 4rem;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    gap: 1rem;
-}
 
-.navbar-links.mobile.active {
-    display: flex;
-}
 
+/* Общие стили */
 
 .navbar-menu-icon {
     display: none;
-    font-size: 2rem;
     background: none;
     border: none;
     cursor: pointer;
-    margin-right: 1rem;
-    margin-top: -1rem;
+    position: relative;
+    width: 30px;
+    height: 24px;
 }
+
+
+
+
+.navbar-menu-icon .line {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    margin-left: -1rem;
+    margin-top: -.3rem;
+    background-color: #4E3620;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Позиция линий */
+.navbar-menu-icon .line:nth-child(1) {
+    top: 0;
+}
+
+.navbar-menu-icon .line:nth-child(2) {
+    top: 10px;
+}
+
+.navbar-menu-icon .line:nth-child(3) {
+    top: 20px;
+}
+
+/* Состояние крестика */
+.navbar-menu-icon.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.navbar-menu-icon.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-menu-icon.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
+
+
+/* Позиция линий */
+.navbar-menu-icon .line:nth-child(1) {
+    top: 0;
+}
+
+.navbar-menu-icon .line:nth-child(2) {
+    top: 10px;
+}
+
+.navbar-menu-icon .line:nth-child(3) {
+    top: 20px;
+}
+
+/* Состояние крестика */
+.navbar-menu-icon.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.navbar-menu-icon.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-menu-icon.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
 
 
 /* Основной контент */
@@ -439,10 +491,11 @@ body {
 }
 
 .recipe-item img {
-    width: 100%;
-    height: auto;
+    width: 12rem;
+    height: 10rem;
     border-radius: 0.3125rem; /* 5px */
 }
+
 
 .btn-more {
     background-color: #8c5a3d;
@@ -473,21 +526,21 @@ body {
 
 
 @media (min-width: 1024px) and (max-width: 1900px)  {
-    .navbar {
+    /*.navbar {
 
         left: -2%;
         width: 100%;
         padding: 0rem 20rem;
-        color: white; /*Уменьшаем отступы */
-        /*flex-wrap: wrap;  Делаем элементы настраиваемыми */
+        color: white; /*Уменьшаем отступы *
+        /*flex-wrap: wrap;  Делаем элементы настраиваемыми *
 
         color: white;
         
     }
 
     .navbar-logo {
-        left: 1rem; /* Уменьшаем отступ слева */
-        flex: 1; /* Логотип занимает часть пространства */
+        left: 1rem; /* Уменьшаем отступ слева *
+        flex: 1; /* Логотип занимает часть пространства *
         display: flex;
         justify-content: center;
         align-items: center;
@@ -496,16 +549,33 @@ body {
     .navbar-links {
         display: flex;
         justify-content: flex-end;
-        flex-wrap: wrap; /* Перенос ссылок на новую строку при недостатке места */
-        flex: 4; /* Увеличиваем пространство для ссылок */
+        flex-wrap: wrap; /* Перенос ссылок на новую строку при недостатке места *
+        flex: 4; /* Увеличиваем пространство для ссылок *
         margin-left: 0;
-        gap: 1rem; /* Увеличиваем расстояние между ссылками */
+        gap: 1rem; /* Увеличиваем расстояние между ссылками *
     }
 
     .navbar-links a {
-        font-size: 1.5rem; /* Уменьшаем размер шрифта */
-        padding: 0.5rem 1rem; /* Уменьшаем отступы */
+        font-size: 1.5rem; /* Уменьшаем размер шрифта *
+        padding: 0.5rem 1rem; /* Уменьшаем отступы *
+    }*/
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 4rem;
     }
+
+    
+    .navbar-links {
+        display: flex;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+
 
     /* Основной контент */
     main {
@@ -629,13 +699,16 @@ body {
     .navbar-links {
         display: none; /* Скрываем ссылки */
         flex-direction: column;
-        gap: 0;
+        gap: 1;
         position: absolute;
-        top: 60px; /* Расположение под навбаром */
+        top: 6rem; /* Расположение под навбаром */
         left: 0;
         width: 100%;
-        background-color: #133215;
+        background-color: #4E3620;
         padding: 1rem 0;
+        transform: translateY(-20px); /* Слегка смещаем меню вверх */
+        pointer-events: none; /* Блокируем клики, пока меню скрыто */
+        transition: all;
     }
 
     .navbar-links a {
@@ -646,7 +719,10 @@ body {
     }
 
     .navbar-links.active {
-        display: flex; /* Показываем ссылки при активации */
+        display: flex;  /*Показываем ссылки при активации */
+        opacity: 1;
+        transform: translateY(0); /* Возвращаем меню на место */
+        pointer-events: all; /* Разрешаем клики */
     }
     
 
