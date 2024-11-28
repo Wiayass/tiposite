@@ -420,7 +420,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.25rem; /* 20px */
-    margin-top: 1.25rem; /* 20px */
+    margin-top: 6rem; /* 20px */
 }
 
 .recipe-item {
@@ -457,13 +457,6 @@ body {
     background-color: #6b422e;
 }
 
-/* Подвал */
-.site-footer {
-    text-align: center;
-    padding: 0.625rem; /* 10px */
-    background-color: #e4d1c7;
-    margin-top: 1.25rem; /* 20px */
-}
 
 
 
