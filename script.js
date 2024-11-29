@@ -70,14 +70,20 @@ function addProductToCart(product) {
 }
 
 recipesOutput.style.display = "none";
+
 // Функция для обработки кнопки "Получить рецепты"
 getRecipesBtn.addEventListener("click", () => {
     if (cartList.children.length === 0) {
-        // Если список пуст, выводим предупреждение
-        recipesOutput.textContent = "Выберите продукты сначала.";
-        recipesOutput.style.color = "#FFFDF5"; // Акцентируем внимание
-        recipesOutput.style.display = "block";
-        
+        // Если список пуст, показываем сообщение
+        recipesOutput.innerHTML = '<img src="photo_2024-11-29_19-09-29.jpg" alt="Предупреждение" style="width: 100%;">';
+        recipesOutput.style.display = "block"; // Делаем элемент видимым
+        recipesOutput.classList.add("active"); // Добавляем класс для выдвижения
+
+        // Убираем сообщение через 3 секунды
+        setTimeout(() => {
+            recipesOutput.classList.remove("active"); // Скрываем табличку
+            recipesOutput.style.display = "none"; // Прячем элемент
+        }, 1800);
     } else {
         // Если в списке есть продукты, перенаправляем на recipes.html
         window.location.href = "recipes.html";

@@ -5,6 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Кулинарные рецепты</title>
+    <style>
+        .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2.5rem; /* Отступы внутри навбара */
+    background-color: #e4d1c7; /* Цвет фона */
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* Тень для акцента */
+    width: 100vw; /* Ширина на весь экран */
+    position: fixed; /* Закрепляем навбар сверху */
+    top: 0; /* Прижимаем навбар к верхнему краю */
+    left: 0; /* Прижимаем к левому краю */
+    z-index: 1000; /* Навбар всегда выше других элементов */
+    box-sizing: border-box; /* Учитываем внутренние отступы */
+}
+
+.header-links {
+    display: flex;
+    gap: 1.875rem; /* Пространство между ссылками */
+}
+
+.header-links a {
+    text-decoration: none;
+    color: #5b4636; /* Цвет текста ссылок */
+    font-size: 1.125rem; /* Размер текста */
+    font-weight: bold; /* Жирный шрифт */
+    transition: color 0.3s; /* Плавное изменение цвета */
+}
+
+.header-links a:hover {
+    color: #8c5a3d; /* Изменяем цвет при наведении */
+}
+
+.header-logo img {
+    height: 5rem; /* Высота логотипа */
+    width: auto; /* Сохраняем пропорции логотипа */
+}
+
+
+/* Раздел рецептов */
+.recipe-section {
+    padding: 1.25rem; /* 20px */
+    text-align: center;
+}
+
+.recipe-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem; /* 20px */
+    margin-top: 6rem; /* 20px */
+}
+
+.recipe-item {
+    background-color: #fff;
+    border: 0.0625rem solid #ddd; /* 1px */
+    border-radius: 0.5rem; /* 8px */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 4px 8px */
+    padding: 0.9375rem; /* 15px */
+    width: 15.625rem; /* 250px */
+    text-align: center;
+}
+
+.recipe-item h2 {
+    font-size: 1.125rem; /* 18px */
+    margin: 0.625rem 0; /* 10px 0 */
+}
+
+.recipe-item img {
+    width: 12rem;
+    height: 10rem;
+    border-radius: 0.3125rem; /* 5px */
+}
+
+
+.btn-more {
+    background-color: #8c5a3d;
+    color: white;
+    border: none;
+    border-radius: 0.3125rem; /* 5px */
+    padding: 0.625rem 0.9375rem; /* 10px 15px */
+    cursor: pointer;
+}
+
+.btn-more:hover {
+    background-color: #6b422e;
+}
+        </style>
 </head>
 <body>
     <!-- ШАПКА -->
@@ -16,7 +104,7 @@
             <nav class="header-links">
                 <a href="/">Главная</a> 
                 <a href="recipes.html">Рецепты</a>
-                <a href="about.html">О нас</a>
+                <a href="pitanie.html">Питание</a>
                 <a href="contact.html">Контакты</a>
             </nav>
         </header>
@@ -28,28 +116,429 @@
         <div class="recipe-wrapper">
             <div class="recipe-item">
                 <h2>Омлет с овощами</h2>
-                <img src="https://via.placeholder.com/150" alt="Омлет">
+                <img src="https://static.1000.menu/img/content-v2/82/05/50028/omlet-s-pomidorami-na-skovorode_1598910826_9_max.jpg" alt="Омлет">
+                <p>Время приготовления: 15 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+            <div class="recipe-item">
+                <h2>Вареники с картошкой и грибами</h2>
+                <img src="http://e3.edimdoma.ru/data/recipes/0013/6677/136677-ed4_wide.jpg?1628765230" alt="Вареники с картошкой и грибами">
+                <p>Время приготовления: 60 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+            <!-- (Повторяются рецепты 2–20 из предыдущего ответа) -->
+        
+            <!-- Рецепт 21 -->
+            <div class="recipe-item">
+                <h2>Куриные крылышки в меду</h2>
+                <img src="https://s3-eu-west-1.amazonaws.com/straus/media/products2/bb6246a973a24b90909cb3b9a7dcd293.jpg" alt="Крылышки">
+                <p>Время приготовления: 40 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+
+            
+        
+            <!-- Рецепт 22 -->
+            <div class="recipe-item">
+                <h2>Фруктовый салат</h2>
+                <img src="https://art-lunch.ru/content/uploads/2021/12/fruktovyi-salat-001.jpg" alt="Фруктовый салат">
+                <p>Время приготовления: 10 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 23 -->
+            <div class="recipe-item">
+                <h2>Морковный торт</h2>
+                <img src="https://attuale.ru/wp-content/uploads/2017/09/tortmorkovnyjcelyj-1024x838.jpg" alt="Морковный торт">
+                <p>Время приготовления: 120 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 24 -->
+            <div class="recipe-item">
+                <h2>Запеченный лосось</h2>
+                <img src="https://samopovar.ru/wp-content/uploads/2020/07/zapechennyj-v-duhovke-losos-2048x1154.jpg" alt="Лосось">
+                <p>Время приготовления: 35 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 25 -->
+            <div class="recipe-item">
+                <h2>Смузи с бананом</h2>
+                <img src="https://prostokvashino.ru/upload/iblock/44d/44db558579626734e7aa33adf97f6f86.jpg" alt="Смузи">
+                <p>Время приготовления: 5 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 26 -->
+            <div class="recipe-item">
+                <h2>Пицца Маргарита</h2>
+                <img src="https://recfood.ru/wp-content/uploads/2019/11/1009813_1566295877.5247_original.jpg" alt="Пицца">
+                <p>Время приготовления: 45 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 27 -->
+            <div class="recipe-item">
+                <h2>Суши с лососем</h2>
+                <img src="https://womanadvice.ru/sites/default/files/mainimage200x200/sushi_s_lososem.jpg.crop_display.jpg" alt="Суши">
+                <p>Время приготовления: 30 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 28 -->
+            <div class="recipe-item">
+                <h2>Овощной суп-пюре</h2>
+                <img src="https://static.elementaree.ru/000022/thumb_m/51b7ac1e519b876e365f305282c7c2d0.jpg" alt="Суп-пюре">
+                <p>Время приготовления: 50 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 29 -->
+            <div class="recipe-item">
+                <h2>Роллы Калифорния</h2>
+                <img src="https://womanadvice.ru/sites/default/files/mainimage200x200/rolly_kaliforniya_recept.jpg.crop_display.jpg" alt="Роллы">
+                <p>Время приготовления: 40 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 30 -->
+            <div class="recipe-item">
+                <h2>Плов с курицей</h2>
+                <img src="https://www.vsegdavkusno.ru/assets/images/recipes/1749/1.jpg" alt="Плов">
+                <p>Время приготовления: 60 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 31 -->
+            <div class="recipe-item">
+                <h2>Банановый хлеб</h2>
+                <img src="https://static.1000.menu/img/content-v2/a8/38/27650/bananovyi-xleb-ot-endi-shef_1585893743_9_max.jpg" alt="Банановый хлеб">
+                <p>Время приготовления: 80 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 32 -->
+            <div class="recipe-item">
+                <h2>Кабачки с чесноком</h2>
+                <img src="https://womanadvice.ru/sites/default/files/kabachki_zharennye_s_chesnokom.jpg.crop_display.jpg" alt="Кабачки">
+                <p>Время приготовления: 30 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 33 -->
+            <div class="recipe-item">
+                <h2>Тыквенный суп</h2>
+                <img src="https://ne-dieta.ru/wp-content/uploads/2020/02/final_1200-1.jpg" alt="Тыквенный суп">
+                <p>Время приготовления: 40 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 34 -->
+            <div class="recipe-item">
+                <h2>Фалафель</h2>
+                <img src="https://static.tildacdn.com/tild3361-6639-4232-b563-303733353432/20200417_131036.jpg" alt="Фалафель">
+                <p>Время приготовления: 50 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 35 -->
+            <div class="recipe-item">
+                <h2>Запеченные грибы</h2>
+                <img src="https://www.chefmarket.ru/blog/wp-content/uploads/2022/09/wild-mushrooms-1-2000x1200.jpg" alt="Грибы">
+                <p>Время приготовления: 25 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 36 -->
+            <div class="recipe-item">
+                <h2>Чебуреки с мясом</h2>
+                <img src="https://i.ytimg.com/vi/hLDgNmJHoBM/maxresdefault.jpg" alt="Чебуреки">
+                <p>Время приготовления: 60 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 37 -->
+            <div class="recipe-item">
+                <h2>Крем-суп с брокколи</h2>
+                <img src="https://www.koolinar.ru/all_image/recipes/171/171614/recipe_162fe658-5cd9-4551-9464-2179bbabbf6c.jpg" alt="Крем-суп">
+                <p>Время приготовления: 35 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 38 -->
+            <div class="recipe-item">
+                <h2>Сырные палочки</h2>
+                <img src="https://i0.wp.com/wkusnoiprosto.ru/wp-content/uploads/2019/08/wkusnoiprosto-syrnie-palochki.jpg?resize=768%2C512&ssl=1" alt="Сырные палочки">
+                <p>Время приготовления: 20 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 39 -->
+            <div class="recipe-item">
+                <h2>Рататуй</h2>
+                <img src="https://gotovim-doma.ru/images/recipe/c/b1/cb1a9c8813086054af30a850e56b839f.jpg" alt="Рататуй">
+                <p>Время приготовления: 60 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 40 -->
+            <div class="recipe-item">
+                <h2>Паста Болоньезе</h2>
+                <img src="https://i.obozrevatel.com/food/recipemain/2018/12/29/item4162.jpg?size=636x424" alt="Паста Болоньезе">
+                <p>Время приготовления: 50 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+ 
+           
+            <!-- Рецепт 2 -->
+            <div class="recipe-item">
+                <h2>Блины с творогом</h2>
+                <img src="https://healthhacks.ru/wp-content/uploads/2021/05/blinchiki-s-tvorogom-6.jpg" alt="Блины">
+                <p>Время приготовления: 20 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 3 -->
+            <div class="recipe-item">
+                <h2>Куриный суп с лапшой</h2>
+                <img src="https://cdn.lifehacker.ru/wp-content/uploads/2020/11/4_1604586072-e1604586169999-1280x640.jpg" alt="Куриный суп">
+                <p>Время приготовления: 35 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 4 -->
+            <div class="recipe-item">
+                <h2>Котлеты</h2>
+                <img src="https://medaboutme.ru/upload/medialibrary/209/shutterstock_465890087.jpg" alt="Шашлык">
+                <p>Время приготовления: 60 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 5 -->
+            <div class="recipe-item">
+                <h2>Салат Цезарь</h2>
+                <img src="https://positivno.me/wp-content/uploads/2020/04/2-7.jpg" alt="Салат Цезарь">
+                <p>Время приготовления: 25 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 6 -->
+            <div class="recipe-item">
+                <h2>Котлеты по-киевски</h2>
+                <img src="https://primemeat.ru/about/po-kievsky-kotlety.jpg" alt="Котлеты">
+                <p>Время приготовления: 50 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 7 -->
+            <div class="recipe-item">
+                <h2>Люля кебаб</h2>
+                <img src="http://img.povar.ru/uploads/63/ea/60/7a/liulya-kebab-320788.JPG" alt="Борщ">
+                <p>Время приготовления: 90 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 8 -->
+            <div class="recipe-item">
+                <h2>Чизкейк с клубникой</h2>
+                <img src="https://www.chefmarket.ru/blog/wp-content/uploads/2021/06/strawberry-cheesecake-2000x1200.jpg" alt="Чизкейк">
+                <p>Время приготовления: 70 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 9 -->
+            <div class="recipe-item">
+                <h2>Курица терияки</h2>
+                <img src="https://womanadvice.ru/sites/default/files/39/kurica_teriyaki_recept_na_skovorode.jpg" alt="Курица терияки">
+                <p>Время приготовления: 45 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 10 -->
+            <div class="recipe-item">
+                <h2>Паста Болоньезе</h2>
+                <img src="https://i.obozrevatel.com/food/recipemain/2018/12/29/item4162.jpg?size=636x424" alt="Паста">
+                <p>Время приготовления: 30 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 11 -->
+            <div class="recipe-item">
+                <h2>Лазанья с мясом</h2>
+                <img src="https://cdn.food.ru/unsigned/fit/640/480/ce/0/czM6Ly9tZWRpYS9waWN0dXJlcy9yZWNpcGVzLzMxMzQ3L2NvdmVycy80TmZycm4uanBn.jpg" alt="Лазанья">
+                <p>Время приготовления: 80 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 12 -->
+            <div class="recipe-item">
+                <h2>Сырники с изюмом</h2>
+                <img src="https://www.ermolino-produkty.ru/picts/articles/vkusnie-sirniki-izyumom-kak-prigotovit.jpg" alt="Сырники">
+                <p>Время приготовления: 30 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 13 -->
+            <div class="recipe-item">
+                <h2>Ризотто с грибами</h2>
+                <img src="http://www.vsegdavkusno.ru/assets/images/recipes/2309/rizotto-s-gribami-low.jpg" alt="Ризотто">
+                <p>Время приготовления: 40 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 14 -->
+            <div class="recipe-item">
+                <h2>Пельмени домашние</h2>
+                <img src="https://na-bludce.ru/wp-content/uploads/2021/09/domashnie-pelmeni.jpg" alt="Пельмени">
+                <p>Время приготовления: 60 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 15 -->
+            <div class="recipe-item">
+                <h2>Том Ям с креветками</h2>
+                <img src="https://na-bludce.ru/wp-content/uploads/2021/09/domashnie-pelmeni.jpg" alt="Том Ям">
+                <p>Время приготовления: 50 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 16 -->
+            <div class="recipe-item">
+                <h2>Овощной рататуй</h2>
+                <img src="https://i0.wp.com/madamevorger.com/wp-content/uploads/2022/08/ratatouille1-e1662472875568.jpg?fit=1463%2C1827&ssl=1" alt="Рататуй">
+                <p>Время приготовления: 60 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 17 -->
+            <div class="recipe-item">
+                <h2>Фаршированный перец</h2>
+                <img src="https://polzablog.ru/wp-content/webpc-passthru.php?src=https://polzablog.ru/wp-content/uploads/2017/08/farshirovanie-perci-glavnaya-2.jpg&nocache=1" alt="Фаршированный перец">
+                <p>Время приготовления: 70 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 18 -->
+            <div class="recipe-item">
+                <h2>Утка с яблоками</h2>
+                <img src="https://vkuhkne.ru/wp-content/uploads/2020/08/%D0%A3%D1%82%D0%BA%D0%B0-%D1%81-%D1%8F%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0%D0%BC%D0%B8-%D0%B2-%D0%B4%D1%83%D1%85%D0%BE%D0%B2%D0%BA%D0%B5.jpg" alt="Утка">
+                <p>Время приготовления: 120 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 19 -->
+            <div class="recipe-item">
+                <h2>Пирог с вишней</h2>
+                <img src="https://attuale.ru/wp-content/uploads/2017/11/pirog.jpeg" alt="Пирог">
+                <p>Время приготовления: 90 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+        
+            <!-- Рецепт 20 -->
+            <div class="recipe-item">
+                <h2>Гуляш из говядины</h2>
+                <img src="https://static.1000.menu/img/content-v2/83/f8/38705/gulyash-iz-govyadiny-kak-v-detskom-sadu_1648451713_14_max.jpg" alt="Гуляш">
+                <p>Время приготовления: 75 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+            
+            <div class="recipe-item">
+                <h2>Омлет с овощами</h2>
+                <img src="https://static.1000.menu/img/content-v2/82/05/50028/omlet-s-pomidorami-na-skovorode_1598910826_9_max.jpg" alt="Омлет">
                 <p>Время приготовления: 15 минут</p>
                 <button class="btn-more">Подробнее</button>
             </div>
             <div class="recipe-item">
                 <h2>Паста с соусом</h2>
-                <img src="https://via.placeholder.com/150" alt="Паста">
+                <img src="https://sovkusom.ru/wp-content/uploads/blog/i/italyanskaya-pasta/1.jpg" alt="Паста">
                 <p>Время приготовления: 30 минут</p>
                 <button class="btn-more">Подробнее</button>
             </div>
             <div class="recipe-item">
                 <h2>Салат Цезарь</h2>
-                <img src="https://via.placeholder.com/150" alt="Салат">
+                <img src="https://static.1000.menu/img/content-v2/eb/79/19516/salat-cezar-klassicheskii-s-kuricei_1611309080_15_max.jpg" alt="Салат">
                 <p>Время приготовления: 20 минут</p>
                 <button class="btn-more">Подробнее</button>
             </div>
+            <div class="recipe-item">
+                <h2>Борщ</h2>
+                <img src="https://www.5.ua/media/pictures/original/196914.jpg?t=1602087060" alt="Салат">
+                <p>Время приготовления: 1,5 - 2 часа</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+            <div class="recipe-item">
+                <h2>Плов</h2>
+                <img src="http://cookrook.ru/sites/default/files/imagecache/inside-in-matirial-only-100/CRW_3205.jpg" alt="Салат">
+                <p>Время приготовления: 1,5 - 2 часа</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+            <div class="recipe-item">
+                <h2>Шашлык</h2>
+                <img src="http://img.povar.ru/uploads/2e/af/7b/9c/shashlik_iz_govyajei_pecheni-55309.jpg" alt="Салат">
+                <p>Время приготовления: 1 - 2 часа</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+            <div class="recipe-item">
+                <h2>Хачапури</h2>
+                <img src="http://menu2go.ru/images/food/239/239_397_20210920175225_7276.jpg" alt="Салат">
+                <p>Время приготовления: 1 - 1,5 часа</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+            <div class="recipe-item">
+                <h2>Шоколадный торт с малиной</h2>
+                <img src="https://www.sloosh.ru/upload/003/u383/a/b/shokoladnyi-tort-s-malinoi-images-big.jpg" alt="Шоколадный торт с малиной">
+                <p>Время приготовления: 120 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+            
+            <!-- Рецепт 46 -->
+            <div class="recipe-item">
+                <h2>Торт "Наполеон"</h2>
+                <img src="https://zira.uz/wp-content/uploads/2018/03/napoleon-6.jpeg" alt="Торт Наполеон">
+                <p>Время приготовления: 180 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+            
+            <!-- Рецепт 47 -->
+            <div class="recipe-item">
+                <h2>Торт "Медовик"</h2>
+                <img src="https://mykaleidoscope.ru/uploads/posts/2019-12/1575769437_30-32.jpg" alt="Медовик">
+                <p>Время приготовления: 150 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+            
+            <!-- Рецепт 48 -->
+            <div class="recipe-item">
+                <h2>Кремовый торт с ягодами</h2>
+                <img src="https://1tortik.ru/files/torts/svadebnye/resize/kremovyj_tort_s_yagodami_470x570.jpg" alt="Кремовый торт с ягодами">
+                <p>Время приготовления: 90 минут</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+            
+            <div class="recipe-item">
+                <h2>Манты</h2>
+                <img src="https://tse3.mm.bing.net/th?id=OIP.GziB1aQU06T8I0aPsUQXXAHaHa&pid=Api&P=0&h=220" alt="Салат">
+                <p>Время приготовления: 1,5 - 2 часа</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+            <div class="recipe-item">
+                <h2>Курник</h2>
+                <img src="https://tse2.mm.bing.net/th?id=OIP.3iaJk75jZb6Gr_uIOLr2RwHaFj&pid=Api&P=0&h=220" alt="Салат">
+                <p>Время приготовления: 2 - 2,5 часа</p>
+                <button class="btn-more">Подробнее</button>
+            </div>
+            <div class="recipe-item">
+                <h2>Бешбармак</h2>
+                <img src="https://tse4.mm.bing.net/th?id=OIP.c1YC_I7hN0o03d7ViF6LNgHaEK&pid=Api&P=0&h=220" alt="Салат">
+                <p>Время приготовления: 1,5 - 2 часа</p>
+                <button class="btn-more">Подробнее</button>
+                
+                
+
         </div>
     </section>
-
-    <!-- ПОДВАЛ -->
-    <footer class="site-footer">
-        <p>© 2024 Все права защищены.</p>
-    </footer>
+    
 </body>
 </html>

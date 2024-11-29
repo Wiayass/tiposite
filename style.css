@@ -174,7 +174,7 @@ main {
 .filter-container {
     margin-top: 2rem;
     padding: 5rem;
-    margin-bottom: 20em;
+    margin-bottom: 20rem;
 }
 
 #product-search-bar {
@@ -242,16 +242,16 @@ main {
     border-radius: 1rem;
 }
 
-.things h1{
-    font-size: 36px;
+.things h1 {
+    font-size: 2.25rem; /* 36px / 16 */
     color: #F4A261;
     font-family: "Bitter", serif;
 }
 
-.things p{
-    font-size: 20px;
+.things p {
+    font-size: 1.25rem; /* 20px / 16 */
     width: 20rem;
-    padding: 1rem .5rem;
+    padding: 1rem 0.5rem;
     color: #FFFDF5;
     font-family: "Oswald", sans-serif;
 }
@@ -259,8 +259,8 @@ main {
 /* Карточки */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr)); /* 250px / 16 */
+    gap: 1.25rem; /* 20px / 16 */
     margin-top: -25rem;
     margin-left: 50rem;
     padding: 5rem;
@@ -268,7 +268,7 @@ main {
 
 .card {
     background: #4E3620;
-    border: 0.0625rem solid #ccc;
+    border: 0.0625rem solid #ccc; /* 1px / 16 */
     border-radius: 1rem;
     text-align: center;
     padding: 1rem;
@@ -276,23 +276,22 @@ main {
     cursor: pointer;
 }
 
-.card p{
+.card p {
     color: #FFFDF5;
-    font-size: 20px;
-    padding-top: .3rem;
+    font-size: 1.25rem; /* 20px / 16 */
+    padding-top: 0.3rem; /* 4.8px / 16 */
     font-weight: 450;
     font-family: "Montserrat", sans-serif;
 }
 
 .card img {
     max-width: 10rem;
-    border-radius: 0.25rem;
+    border-radius: 0.25rem; /* 4px / 16 */
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-0.3125rem); /* 5px / 16 */
 }
-
 
 /* Корзина */
 .cart-container {
@@ -308,35 +307,33 @@ main {
     align-items: stretch; /* Выравнивание содержимого */
 }
 
-.cart-container h3{
+.cart-container h3 {
     color: #F4A261;
-    margin-left: .5rem;
+    margin-left: 0.5rem; /* 8px / 16 */
     font-family: "Bitter", serif;
     font-weight: 800;
     font-size: 1.5rem;
-}
-
-
-.cart-container h3 {
-    margin-bottom: 10px;
-    
+    margin-bottom: 0.625rem; /* 10px / 16 */
 }
 
 .cart-container ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 10px;
+    margin: 0 0 0.625rem; /* 10px / 16 */
     flex-grow: 1; /* Список занимает всё оставшееся пространство */
     overflow-y: auto; /* Скроллинг для длинного списка */
-    max-height: 10rem; /* Задаёт фиксированную высоту области списка */
-    border-radius: 5px;
+    max-height: 10rem;
+    border-radius: 0.3125rem; /* 5px / 16 */
     background-color: #f4f6f0;
 }
 
 .cart-container ul li {
-    padding: 5px;
-    border-bottom: 1px solid #ddd;
+    padding: 0.3125rem; /* 5px / 16 */
+    border-bottom: 0.0625rem solid #ddd; /* 1px / 16 */
 }
+
+
+
 
 button#get-recipes-btn {
     margin-top: auto; /* Кнопка остаётся снизу */
@@ -354,13 +351,13 @@ button:hover{
     transform: translateY(-.7px);
 }
 
-#recipes-output {
+/*#recipes-output {
     margin-top: 1rem;
     padding: 10px 1rem;
     background-color: #8D9777;
     border-radius: .4rem;
     font-family: "Oswald", sans-serif;
-}
+} */
 
 
 
@@ -441,6 +438,19 @@ button:hover{
 
 
 
+/* Стили для всплывающего сообщения */
+#recipes-output {
+    position: fixed;
+    margin-top: -20rem; /* Центровка по вертикали */
+    width: 220px; /* Ширина таблички */
+    transition: top 2s ease; /* Плавное выдвижение */
+    z-index: 1000; /* Поверх других элементов */
+}
+
+/* Видимая позиция таблички */
+#recipes-output.active {
+    top: 57rem; /* Табличка выдвигается  */
+}
 
 
 
@@ -452,8 +462,7 @@ button:hover{
 
 
 
-
-@media (min-width: 1024px) and (max-width: 1900px)  {
+@media (min-width: 1024px) and (max-width: 2000px)  {
     /*.navbar {
 
         left: -2%;
@@ -513,7 +522,7 @@ button:hover{
     }
 
     .things {
-        margin-left: 4rem;
+        margin-left: -2rem;
     }
 
     /* Карточки */
@@ -523,7 +532,7 @@ button:hover{
         gap: 2rem; /* Расстояние между карточками */
         column-gap: 7rem;
         margin-top: -28rem;
-        padding:  8rem;
+        padding:  2rem;
     }
 
     .card {
@@ -589,6 +598,8 @@ button:hover{
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
 
 
 
@@ -662,7 +673,7 @@ button:hover{
 
 
     main {
-        width: 90%;
+        width: 100%;
         margin-top: -15rem;
     }
 
@@ -728,14 +739,30 @@ button:hover{
 
 
     .card-container {
+        display: grid;
         margin-top: 1rem;
-        margin-left: -.5rem;
+        margin-left: 0rem;/**/
+        grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr)); /* 250px / 16 */
+        gap: 1.25rem; /* 20px / 16 */
+    }
+
+    #recipes-output {
+        position: fixed;
+        margin-top: -20rem; /* Центровка по вертикали */
+        margin-left: 8rem;
+        margin-right: 8rem;
+        width: 250px; /* Ширина таблички */
+        z-index: 1000; /* Поверх других элементов */
     }
 
     .card {
-        width: 15rem;
+        width: auto;
     }
 
+    #get-recipes-btn{
+        font-size: 16px;
+        height: 5%;
+    }
 
 
 
@@ -820,4 +847,26 @@ button:hover{
     .card-container {
         grid-template-columns: 1fr;
     }
+}
+
+@media  (max-width: 390px) {
+    .card-container {
+        margin-top: 1rem;
+           
+    }
+
+    .card {
+        margin-left: -1rem;
+        margin-right: -1rem;/**/ 
+        width: auto;
+    }
+    
+    .things {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        width: auto;
+    }
+
+
+
 }
