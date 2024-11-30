@@ -12,6 +12,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 body {
     font-family: Arial, sans-serif;
@@ -158,7 +164,6 @@ main {
     margin: -10rem auto 2rem;
     padding-top: 5rem;
     border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .line {
@@ -233,6 +238,7 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(13rem, 2fr)); /* 250px / 16 */
     gap: 1.25rem; /* 20px / 16 */
     margin-top: -20rem;
+    margin-bottom: 2rem;
     margin-left: 50rem;
     padding: 0 ;
 }
@@ -451,24 +457,87 @@ button:hover{
 /* разделение */   
 
 
-/* Шапка */
+/* footer */
+
+section{
+    padding: 5rem 38rem 5rem;
+    font-family: "Montserrat", sans-serif;
+}
 
 
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    background-color: #4E3620;
+    gap: 3.5rem;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footer-content img{
+    width: 10rem;
+    margin-top: -3rem;
+}
+.footer-content h4{
+    color: #F4A261;
+    margin-bottom: 1.5rem;
+    font-size: 18px;
+}
+
+.footer-content li{
+    margin-bottom: .5rem;
+}
+
+.footer-content li a{
+    display: block;
+    color: #8D9777;
+    font-size: 16px;
+    font-weight: 300;
+    transition: all .3s ease;
+}
+
+.footer-content li a:hover{
+    transform: translateY(-.110rem);
+    color: #fff;
+}
+
+.footer-content p{
+    color: #F4A261;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 1rem 0;
+    line-height: 30px;
+}
 
 
+.footer-icons a{
+    display: inline-block;
+    font-size: 22px;
+    color: #F4A261;
+    margin-right: 17px;
+    transition: all .3s ease;
+}
 
+.footer-icons a:hover{
+    color: #fff;
+    transform: translateY(-.110rem);
+}
 
+@media (max-width: 1690px){
+    section{
+        padding: 2rem 20rem 1rem;
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 1200px){
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+        gap: 2rem;
+    }
+}
 
 
 @media (min-width: 1024px) and (max-width: 2000px)  {
@@ -868,6 +937,19 @@ button:hover{
     .card-container {
         grid-template-columns: 1fr;
     }
+
+    section {
+        padding: 3rem 3rem; /* Для еще меньших экранов */
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+
+        gap: 2.5rem;
+    }
+
+
 }
 
 @media  (max-width: 390px) {
