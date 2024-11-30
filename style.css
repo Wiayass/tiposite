@@ -351,6 +351,25 @@ button:hover{
     transform: translateY(-.7px);
 }
 
+/* Стили для всплывающего сообщения */
+#recipes-output {
+    position: fixed;
+    top: 50%; /* Центровка по вертикали */
+    right: -300px; /* Начальное положение за экраном */
+    transform: translateY(-50%); /* Центровка по оси Y */
+    width: 350px; /* Ширина таблички */
+    border-radius: 8px; /* Закругленные углы */
+    transition: right 0.5s ease-in-out; /* Плавное выдвижение */
+    z-index: 1000; /* Поверх других элементов */
+}
+
+/* Видимая позиция таблички */
+#recipes-output.active {
+    right: 20px; /* Конечное положение таблички */
+}
+
+
+
 /*#recipes-output {
     margin-top: 1rem;
     padding: 10px 1rem;
@@ -747,6 +766,23 @@ button:hover{
     #get-recipes-btn{
         font-size: 16px;
         height: 5%;
+    }
+
+    /* Стили для всплывающего сообщения */
+    #recipes-output {
+        position: fixed;
+        top: 50%; /* Центровка по вертикали */
+        right: -300px; /* Начальное положение за экраном */
+        transform: translateY(-50%); /* Центровка по оси Y */
+        width: 350px; /* Ширина таблички */
+        border-radius: 8px; /* Закругленные углы */
+        transition: right 0.5s ease-in-out; /* Плавное выдвижение */
+        z-index: 1000; /* Поверх других элементов */
+    }
+
+    /* Видимая позиция таблички */
+    #recipes-output.active {
+        right: 20px; /* Конечное положение таблички */
     }
 
 
