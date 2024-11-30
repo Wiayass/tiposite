@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oswald:wght@200..700&display=swap');
 /*Ru language*/
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
@@ -507,7 +508,8 @@ section{
     color: #F4A261;
     font-size: 14px;
     font-weight: 300;
-    margin: 1rem 0;
+    margin-left: 10rem;
+    margin-top: -8rem;
     line-height: 30px;
 }
 
@@ -516,7 +518,8 @@ section{
     display: inline-block;
     font-size: 22px;
     color: #F4A261;
-    margin-right: 17px;
+    margin-left: 10rem;
+    margin-right: -8.5rem;
     transition: all .3s ease;
 }
 
@@ -524,6 +527,29 @@ section{
     color: #fff;
     transform: translateY(-.110rem);
 }
+
+
+.footer-bottom {
+    background-color: #432e1a;
+    margin-bottom: 0;
+    width: 100%;
+    
+}
+
+.footer-bottom p{
+    color: #F4A261;
+    margin: 1rem 60rem 1rem 68rem;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer-bottom .designed {
+    color: #ccc;
+    font-family: "Lavishly Yours", cursive;
+    font-size: 28px;
+    font-weight: 600;
+}
+
 
 @media (max-width: 1690px){
     section{
@@ -947,6 +973,27 @@ section{
         grid-template-columns: repeat(auto-fit, minmax(150px, auto));
 
         gap: 2.5rem;
+    }
+    
+    .footer-content .footer-icons{
+        margin-top: 2rem;
+        margin-left: -6.5rem;
+    }
+
+    
+
+    .footer-bottom p{
+        color: #F4A261;
+        margin: 1rem 5rem .5rem 6rem;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .footer-bottom .designed {
+        color: #ccc;
+        font-family: "Lavishly Yours", cursive;
+        font-size: 28px;
+        font-weight: 600;
     }
 
 
