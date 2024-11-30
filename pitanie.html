@@ -4,24 +4,162 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Фитнес программы</title>
-    <style>
-        /* Устанавливаем базовый размер шрифта */
-        html {
-            font-size: 16px; /* 1rem = 16px */
-        }
 
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oswald:wght@200..700&display=swap');
+        /*Ru language*/
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #F5E8D4;
-            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f9f5ef;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 35rem;
+            /*background-color: #C9A66B;*/
+            color: white;
+            font-family: "Montserrat", sans-serif;
         }
 
 
+
+        .navbar-logo {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .navbar-links a {
+            text-decoration: none;
+            font-size: 1.25rem;
+            color: #8D9777;
+            transition: color 0.3s;
+        }
+
+        .navbar-links a:hover {
+            color: #a2ae88;
+        }
+
+
+
+        /* Общие стили */
+
+        .navbar-menu-icon {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            width: 30px;
+            height: 24px;
+        }
+
+
+
+
+        .navbar-menu-icon .line {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            margin-left: -1rem;
+            margin-top: -.3rem;
+            background-color: #4E3620;
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Позиция линий */
+        .navbar-menu-icon .line:nth-child(1) {
+            top: 0;
+        }
+
+        .navbar-menu-icon .line:nth-child(2) {
+            top: 10px;
+        }
+
+        .navbar-menu-icon .line:nth-child(3) {
+            top: 20px;
+        }
+
+        /* Состояние крестика */
+        .navbar-menu-icon.active .line:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .navbar-menu-icon.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar-menu-icon.active .line:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+
+
+
+
+        /* Позиция линий */
+        .navbar-menu-icon .line:nth-child(1) {
+            top: 0;
+        }
+
+        .navbar-menu-icon .line:nth-child(2) {
+            top: 10px;
+        }
+
+        .navbar-menu-icon .line:nth-child(3) {
+            top: 20px;
+        }
+
+        /* Состояние крестика */
+        .navbar-menu-icon.active .line:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+
+        .navbar-menu-icon.active .line:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar-menu-icon.active .line:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+
         .container {
             max-width: 75rem; /* 1200px */
-            margin: 0 auto;
+            margin: 10rem auto;
             padding: 1.25rem; /* 20px */
         }
 
@@ -79,63 +217,109 @@
             bottom: 0;
             width: 100%;
         }
-        .header-links {
-    display: flex;
-    gap: 2.875rem; /* Пространство между ссылками */
-    
-}
-
-.header-links a {
-    text-decoration: none;
-    color: #5b4636; /* Цвет текста ссылок */
-    font-size: 1.125rem; /* Размер текста */
-    font-weight: bold; /* Жирный шрифт */
-    transition: color 0.3s; /* Плавное изменение цвета */
-    left: 100%;
-}
-
-.header-links a:hover {
-    color: #F5E8D4; /* Изменяем цвет при наведении */
-}
-
-.header-logo img {
-    height: 5rem; /* Высота логотипа */
-    width: auto; /* Сохраняем пропорции логотипа */
-}
+        
 
 
 
 
-.btn-more {
-    background-color: #8c5a3d;
-    color: #F5E8D4;
-    border: none;
-    border-radius: 0.3125rem; /* 5px */
-    padding: 0.625rem 0.9375rem; /* 10px 15px */
-    cursor: pointer;
-}
+        .btn-more {
+            background-color: #8c5a3d;
+            color: #F5E8D4;
+            border: none;
+            border-radius: 0.3125rem; /* 5px */
+            padding: 0.625rem 0.9375rem; /* 10px 15px */
+            cursor: pointer;
+        }
 
-.btn-more:hover {
-    background-color: #6b422e;
-}
+        .btn-more:hover {
+            background-color: #6b422e;
+        }
+        /* Адаптация для мобильных */
+        @media  (max-width: 768px) {
+            /*navbar*/
+            .navbar {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0.5rem 1rem;
+                font-family: "Montserrat", sans-serif;
+            }
+
+            .navbar-logo img {
+                order: 1; /* Логотип переместится в начало */
+                margin-left: -.5rem;
+                width: 7rem;
+            }
+
+            .navbar-menu-icon {
+                display: block; /* Показываем иконку меню */
+                order: 2;
+            }
+
+            .navbar-links {
+                display: none; /* Скрываем ссылки */
+                flex-direction: column;
+                gap: 1;
+                position: absolute;
+                top: 6rem; /* Расположение под навбаром */
+                left: 0;
+                width: 100%;
+                background-color: #4E3620;
+                padding: 1rem 0;
+                transform: translateY(-20px); /* Слегка смещаем меню вверх */
+                pointer-events: none; /* Блокируем клики, пока меню скрыто */
+                transition: all;
+                
+            }
+
+            .navbar-links a {
+                padding: 0.5rem 1rem;
+                color: #fff;
+                text-align: center;
+                display: block;
+            }
+
+            .navbar-links a:hover{
+                color: #F4A261;
+            }
+
+            .navbar-links.active {
+                display: flex;  /*Показываем ссылки при активации */
+                opacity: 1;
+                transform: translateY(0); /* Возвращаем меню на место */
+                pointer-events: all; /* Разрешаем клики */
+            }
+        }
+
     </style>
+
+
 </head>
 <body>
 
     <!-- ШАПКА -->
+    <!--NAVBAR-->
     <nav>
-        <header class="header-bar">
-            <div class="header-logo">
-                <img src="https://i.ibb.co.com/FK2LLBB/logo-with-transparency-and-text-removebg-preview.png" alt="Логотип">
+        <header class="navbar">
+            <div class="navbar-logo">
+                <img src="https://i.ibb.co.com/FK2LLBB/logo-with-transparency-and-text-removebg-preview.png" alt="logo-with-transparency-and-text-removebg-preview" border="0">
             </div>
-            <nav class="header-links">
-                <a href="/">Главная</a> 
+            
+            <button class="navbar-menu-icon" id="menu-toggle1">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            
+
+            <nav class="navbar-links" id="navbar-links1">
+                <a href="index.html">Главная</a> 
                 <a href="recipes.html">Рецепты</a>
                 <a href="pitanie.html">Питание</a>
                 <a href="contact.html">Контакты</a>
             </nav>
         </header>
     </nav>
+
 
     <div class="container">
         <!-- Программа для похудения -->
@@ -179,5 +363,19 @@
         </div>
     </div>
 
+
+    <script>
+
+        // Получаем элементы
+        const menuToggle1 = document.getElementById('menu-toggle1');
+        const navbarLinks1 = document.getElementById('navbar-links1');
+
+        // Добавляем обработчик клика
+        menuToggle1.addEventListener('click', () => {
+            menuToggle1.classList.toggle('active'); // Анимация иконки
+            navbarLinks1.classList.toggle('active'); // Плавное меню
+        });
+
+    </script>
 </body>
 </html>
