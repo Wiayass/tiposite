@@ -180,6 +180,8 @@ document.addEventListener("click", (e) => {
 
 
 
+
+
 // Функция для отображения результатов поиска продуктов
 productSearchBar.addEventListener("input", () => {
     const query = productSearchBar.value.toLowerCase();
@@ -279,7 +281,140 @@ function getRecipes() {
 
 
 
+//ANIMATION
+
+//navbar animation
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".navbar");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Элемент в зоне видимости — добавляем класс
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // Отключаем наблюдение за этим элементом
+            } else {
+                // Для невидимых элементов (опционально)
+                entry.target.classList.remove("show");
+            }
+        });
+    }, {
+        threshold: 0.1 // Процент видимости элемента, после которого срабатывает анимация
+    });
+
+    animatedElements.forEach(element => observer.observe(element));
+});
 
 
+//Search
 
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".search-container");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Элемент в зоне видимости — добавляем класс
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // Отключаем наблюдение за этим элементом
+            } else {
+                // Для невидимых элементов (опционально)
+                entry.target.classList.remove("show");
+            }
+        });
+    }, {
+        threshold: 0.1 // Процент видимости элемента, после которого срабатывает анимация
+    });
+
+    animatedElements.forEach(element => observer.observe(element));
+});
+
+//things
+
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".things");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Элемент в зоне видимости — добавляем класс
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // Отключаем наблюдение за этим элементом
+            } else {
+                // Для невидимых элементов (опционально)
+                entry.target.classList.remove("show");
+            }
+        });
+    }, {
+        threshold: 0.1 // Процент видимости элемента, после которого срабатывает анимация
+    });
+
+    animatedElements.forEach(element => observer.observe(element));
+});
+
+//card
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".card-container");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Элемент в зоне видимости — добавляем класс
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // Отключаем наблюдение за этим элементом
+            } else {
+                // Для невидимых элементов (опционально)
+                entry.target.classList.remove("show");
+            }
+        });
+    }, {
+        threshold: 0.1 // Процент видимости элемента, после которого срабатывает анимация
+    });
+
+    animatedElements.forEach(element => observer.observe(element));
+});
     
+
+//footer
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".footer");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Элемент в зоне видимости — добавляем класс
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // Отключаем наблюдение за этим элементом
+            } else {
+                // Для невидимых элементов (опционально)
+                entry.target.classList.remove("show");
+            }
+        });
+    }, {
+        threshold: 0.1 // Процент видимости элемента, после которого срабатывает анимация
+    });
+
+    animatedElements.forEach(element => observer.observe(element));
+});
+
+//footer-bottom
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".footer-bottom");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Элемент в зоне видимости — добавляем класс
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // Отключаем наблюдение за этим элементом
+            } else {
+                // Для невидимых элементов (опционально)
+                entry.target.classList.remove("show");
+            }
+        });
+    }, {
+        threshold: 0.1 // Процент видимости элемента, после которого срабатывает анимация
+    });
+
+    animatedElements.forEach(element => observer.observe(element));
+});

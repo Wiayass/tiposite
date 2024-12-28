@@ -44,6 +44,12 @@ body {
     /*background-color: #C9A66B;*/
     color: white;
     font-family: "Montserrat", sans-serif;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 1.5s ease; /* Плавная анимация */
+}
+
+.navbar.show{
+    opacity: 1; /* Полная видимость */
 }
 
 
@@ -155,7 +161,79 @@ body {
     transform: translateY(-10px) rotate(-45deg);
 }
 
+/* Поиск */
+.search-container {
+    margin: 20rem ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(50px); /* Смещены вниз */
+    transition: opacity 0.6s ease, transform 1.4s ease; /* Плавная анимация */
+}
 
+.search-container.show{
+    opacity: 1; /* Полная видимость */
+    transform: translateY(0); /* Возврат на место */
+}
+
+#search-bar {
+    width: 100%;
+    max-width: 50rem;
+    padding: 1rem;
+    font-size: 1rem;
+    border: .12rem solid #133215;
+    border-radius: .6rem;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+.search-results {
+    position: absolute;
+    top: 23.5rem; /* 112px */
+    width: 49.75rem; /* 300px */
+    background: white;
+    border: 0.0625rem solid #ddd; /* 1px */
+    border-radius: 0.3150rem; /* 5px */
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1); /* 4px 10px */
+    max-height: 12.5rem; /* 200px */
+    overflow-y: auto;
+    display: none;
+    z-index: 10;
+}
+
+.search-results div {
+    padding: 0.625rem; /* 10px */
+    border-bottom: 0.0625rem solid #f1f1f1; /* 1px */
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-results div:last-child {
+    border-bottom: none;
+}
+
+.search-results div:hover {
+    background-color: #ddd;
+}
+
+#results-container{
+    position: absolute;
+    top: 23.5rem; /* 112px */
+    width: 49.75rem; /* 300px */
+    background: white;
+    padding: .2rem 2rem;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    border: 0.0625rem solid #ddd; /* 1px */
+    border-radius: 0.3150rem; /* 5px */
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1); /* 4px 10px */
+    max-height: 12.5rem; /* 200px */
+    overflow-y: auto;
+    display: none;
+    z-index: 10;
+}
 
 
 /* Основной контент */
@@ -242,7 +320,16 @@ main {
     margin-bottom: 2rem;
     margin-left: 50rem;
     padding: 0 ;
+    opacity: 0;
+    transform: translateY(50px); /* Смещены вниз */
+    transition: opacity 0.6s ease, transform 1.4s ease; /* Плавная анимация */
 }
+
+.card-container.show{
+    opacity: 1; /* Полная видимость */
+    transform: translateY(0); /* Возврат на место */
+}
+
 
 .card {
     background: #4E3620;
@@ -280,6 +367,14 @@ main {
     padding: 2rem 2rem;
     margin-left: 5rem auto;
     border-radius: 1rem;
+    opacity: 0;
+    transform: translateY(50px); /* Смещены вниз */
+    transition: opacity 0.6s ease, transform 1.5s ease; /* Плавная анимация */
+}
+
+.things.show{
+    opacity: 1; /* Полная видимость */
+    transform: translateY(0); /* Возврат на место */
 }
 
 .things h1 {
@@ -388,71 +483,7 @@ button:hover{
 
 
 
-/* Поиск */
-.search-container {
-    margin: 20rem ;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
 
-#search-bar {
-    width: 100%;
-    max-width: 50rem;
-    padding: 1rem;
-    font-size: 1rem;
-    border: .12rem solid #133215;
-    border-radius: .6rem;
-    outline: none;
-    font-family: "Montserrat", sans-serif;
-}
-
-.search-results {
-    position: absolute;
-    top: 23.5rem; /* 112px */
-    width: 49.75rem; /* 300px */
-    background: white;
-    border: 0.0625rem solid #ddd; /* 1px */
-    border-radius: 0.3150rem; /* 5px */
-    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1); /* 4px 10px */
-    max-height: 12.5rem; /* 200px */
-    overflow-y: auto;
-    display: none;
-    z-index: 10;
-}
-
-.search-results div {
-    padding: 0.625rem; /* 10px */
-    border-bottom: 0.0625rem solid #f1f1f1; /* 1px */
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.search-results div:last-child {
-    border-bottom: none;
-}
-
-.search-results div:hover {
-    background-color: #ddd;
-}
-
-#results-container{
-    position: absolute;
-    top: 23.5rem; /* 112px */
-    width: 49.75rem; /* 300px */
-    background: white;
-    padding: .2rem 2rem;
-    font-size: 16px;
-    font-weight: 500;
-    font-family: "Montserrat", sans-serif;
-    border: 0.0625rem solid #ddd; /* 1px */
-    border-radius: 0.3150rem; /* 5px */
-    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1); /* 4px 10px */
-    max-height: 12.5rem; /* 200px */
-    overflow-y: auto;
-    display: none;
-    z-index: 10;
-}
 
 
 /* разделение */   
@@ -468,6 +499,7 @@ section{
 
 .footer {
     display: grid;
+    
     grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     background-color: #4E3620;
     gap: 3.5rem;
@@ -475,7 +507,15 @@ section{
     bottom: 0;
     left: 0;
     right: 0;
+    opacity: 0;
+    transform: translateY(50px); /* Смещены вниз */
+    transition: opacity 0.6s ease, transform 1.4s ease; /* Плавная анимация */
 }
+.footer.show{
+    opacity: 1; /* Полная видимость */
+    transform: translateY(0); /* Возврат на место */
+}
+
 
 .footer-content img{
     width: 10rem;
@@ -533,12 +573,12 @@ section{
     background-color: #432e1a;
     margin-bottom: 0;
     width: 100%;
-    
 }
+
 
 .footer-bottom p{
     color: #F4A261;
-    margin: 1rem 60rem 1rem 68rem;
+    margin: .5rem 60rem .5rem 68rem;
     font-size: 18px;
     font-weight: 500;
 }
