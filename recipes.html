@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleforreceipts.css">
     <title>Кулинарные рецепты</title>
     <style>
 * {
@@ -139,6 +139,8 @@
         
 
 
+
+
 /* Раздел рецептов */
 .recipe-section {
     padding: 1.25rem; /* 20px */
@@ -191,6 +193,8 @@
 .btn-more:hover {
     background-color: #6b422e;
 }
+
+
 
 
 /* Адаптация для мобильных */
@@ -269,16 +273,16 @@
             
 
             <nav class="navbar-links" id="navbar-links1">
-                <a href="index.html">Главная</a> 
+                <a href="/index.html">Главная</a> 
                 <a href="recipes.html">Рецепты</a>
-                <a href="pitanie.html">Питание</a>
-                <a href="contact.html">Контакты</a>
+                <a href="/pitanie.html">Питание</a>
+                <a href="/contact.html">Контакты</a>
             </nav>
         </header>
     </nav>
 
     <!-- РАЗДЕЛ С РЕЦЕПТАМИ -->
-    <section class="recipe-section">
+    <section class="recipe-section" id="recipes-container">
         <h1>Кулинарные рецепты</h1>
         <div class="recipe-wrapper">
             <div class="recipe-item">
@@ -701,6 +705,15 @@
                 <img src="https://tse4.mm.bing.net/th?id=OIP.c1YC_I7hN0o03d7ViF6LNgHaEK&pid=Api&P=0&h=220" alt="Салат">
                 <p>Время приготовления: 1,5 - 2 часа</p>
                 <button class="btn-more">Подробнее</button>
+
+            </div>
+            <div class="recipe-item">
+                <h2>Бешбармак</h2>
+                <img src="https://tse4.mm.bing.net/th?id=OIP.c1YC_I7hN0o03d7ViF6LNgHaEK&pid=Api&P=0&h=220" alt="Салат">
+                <p>Время приготовления: 1,5 - 2 часа</p>
+                <button class="btn-more">Подробнее</button>
+
+            </div>
                 
                 
 
@@ -724,6 +737,36 @@
                 resultsContainer.style.display = "none";
             }
         });
+
+        //add new recipt
+        fetch('recipes.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('recipes-container');
+                data.forEach(recipe => {
+                    const recipeElement = document.createElement('div');
+                    recipeElement.classList.add('recipe');
+                    recipeElement.innerHTML = `
+                        <section class="recipe-section">
+                            <div class="recipe-wrapper">
+                                <div class="recipe-item">
+                                    <h2><a href="testrecipe.html?id=${recipe.id}">${recipe.title}</a></h2>
+                                    
+                                    <img src="${recipe.images}" alt="#" >
+                                    
+                                    <p>${recipe.description}</p>
+                                    <button class="btn-more"><a href="testrecipe.html?id=${recipe.id}">Подробнее</a></button>
+                                </div>
+
+                            </div>
+                        </section>
+                        
+                        
+                    `;
+                    container.appendChild(recipeElement);
+                });
+            });
+
     </script>
 </body>
 </html>

@@ -1,0 +1,712 @@
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oswald:wght@200..700&display=swap');
+/*Ru language*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f5ef;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 35rem;
+    /*background-color: #C9A66B;*/
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+
+
+.navbar-logo {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: #8D9777;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #a2ae88;
+}
+
+
+
+/* Общие стили */
+
+.navbar-menu-icon {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 24px;
+}
+
+
+
+
+.navbar-menu-icon .line {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    margin-left: -1rem;
+    margin-top: -.3rem;
+    background-color: #4E3620;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Позиция линий */
+.navbar-menu-icon .line:nth-child(1) {
+    top: 0;
+}
+
+.navbar-menu-icon .line:nth-child(2) {
+    top: 10px;
+}
+
+.navbar-menu-icon .line:nth-child(3) {
+    top: 20px;
+}
+
+/* Состояние крестика */
+.navbar-menu-icon.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.navbar-menu-icon.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-menu-icon.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
+
+
+/* Позиция линий */
+.navbar-menu-icon .line:nth-child(1) {
+    top: 0;
+}
+
+.navbar-menu-icon .line:nth-child(2) {
+    top: 10px;
+}
+
+.navbar-menu-icon .line:nth-child(3) {
+    top: 20px;
+}
+
+/* Состояние крестика */
+.navbar-menu-icon.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.navbar-menu-icon.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-menu-icon.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
+
+
+/* Основной контент */
+main {
+    width: 60%;
+    height: auto;
+    margin-bottom: 60rem;
+    /*background-color: #8D9777;*/
+}
+
+
+
+/* Карточки */
+
+#recipes-container{
+    display: grid;
+    grid-template-rows: repeat(1, 1fr); /* 3 колонки одинаковой ширины */
+    row-gap: 2rem; /* Отступы между строками */
+}
+
+
+
+
+
+
+.card {
+    width: 50rem;
+    height: 20rem;
+    border: 0.0625rem solid #ccc; /* 1px / 16 */
+    top: 30rem;
+    margin-left: -10rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    position: relative; /* Ensure positioning context for child elements */
+}
+
+.card h1 {
+    color: #8D9777;
+    width: 17rem;
+    margin-top: 2rem;
+    margin-left: 20rem;
+    margin-right: 2rem;
+}
+
+.card h2 {
+    color: #8D9777;
+    font-size: 1.25rem; /* 20px / 16 */
+    margin-top: -1.7rem; /* 4.8px / 16 */
+    margin-left: 40rem;
+    font-weight: 450;
+    font-family: "Montserrat", sans-serif;
+}
+.card h3 {
+    color: #8D9777;
+    font-size: 1.25rem; /* 20px / 16 */
+    margin-top: 1rem; /* 4.8px / 16 */
+    margin-left: 22rem;
+    font-weight: 450;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+
+.button_1 button {
+    width: 15rem;
+    height: 2rem;
+    background-color: #8D9777;
+    border-radius: 1.3rem;
+    margin-top: 10rem; /* 4.8px / 16 */
+    margin-left: 30rem;
+    border: none;
+}
+
+.button_1 button a {
+    color: #fff;
+    font-size: 1.25rem; /* 20px / 16 */
+    font-weight: 450;
+    font-family: "Montserrat", sans-serif;
+}
+
+.card .time img{
+    width: 2rem;
+    height: 2rem;
+    color: #8D9777;
+    margin-top: 3.3rem;
+    margin-left: 32.5rem;
+}
+
+.card .time p {
+    color: #8D9777;
+    font-size: 1.25rem; /* 20px / 16 */
+    margin-top: -13.5rem;
+    margin-left: 36rem;
+    font-weight: 450;
+    font-family: "Montserrat", sans-serif;
+}
+
+.card img {
+    width: 16rem;
+    height: 16rem;
+    margin-top: 1rem; /* Убедимся, что отступы фиксированы */
+    margin-left: 1rem;
+    border-radius: 0.25rem; /* 4px / 16 */
+    position: absolute; /* Фиксируем изображение относительно карточки */
+    top: 1rem; /* Позиционируем сверху */
+    left: 1rem; /* Позиционируем слева */
+}
+
+
+
+.card:hover {
+    transform: translateY(-0.3125rem); /* 5px / 16 */
+}
+
+
+
+
+
+
+
+
+
+ 
+
+
+/* footer */
+
+section{
+    padding: 5rem 38rem 5rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.footer {
+    display: grid;
+    
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    background-color: #4E3620;
+    gap: 3.5rem;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+
+.footer-content img{
+    width: 10rem;
+    margin-top: -3rem;
+}
+.footer-content h4{
+    color: #F4A261;
+    margin-bottom: 1.5rem;
+    font-size: 18px;
+}
+
+.footer-content li{
+    margin-bottom: .5rem;
+}
+
+.footer-content li a{
+    display: block;
+    color: #8D9777;
+    font-size: 16px;
+    font-weight: 300;
+    transition: all .3s ease;
+}
+
+.footer-content li a:hover{
+    transform: translateY(-.110rem);
+    color: #fff;
+}
+
+.footer-content p{
+    color: #F4A261;
+    font-size: 14px;
+    font-weight: 300;
+    margin-left: 10rem;
+    margin-top: -8rem;
+    line-height: 30px;
+}
+
+
+.footer-icons a{
+    display: inline-block;
+    font-size: 22px;
+    color: #F4A261;
+    margin-left: 10rem;
+    margin-right: -8.5rem;
+    transition: all .3s ease;
+}
+
+.footer-icons a:hover{
+    color: #fff;
+    transform: translateY(-.110rem);
+}
+
+
+.footer-bottom {
+    background-color: #432e1a;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+
+.footer-bottom p{
+    color: #F4A261;
+    margin: .5rem 60rem .5rem 68rem;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.footer-bottom .designed {
+    color: #ccc;
+    font-family: "Lavishly Yours", cursive;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+
+
+
+
+@media (min-width: 1024px) and (max-width: 2000px)  {
+    /*.navbar {
+
+        left: -2%;
+        width: 100%;
+        padding: 0rem 20rem;
+        color: white; /*Уменьшаем отступы *
+        /*flex-wrap: wrap;  Делаем элементы настраиваемыми *
+
+        color: white;
+        
+    }
+
+    .navbar-logo {
+        left: 1rem; /* Уменьшаем отступ слева *
+        flex: 1; /* Логотип занимает часть пространства *
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-links {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap; /* Перенос ссылок на новую строку при недостатке места *
+        flex: 4; /* Увеличиваем пространство для ссылок *
+        margin-left: 0;
+        gap: 1rem; /* Увеличиваем расстояние между ссылками *
+    }
+
+    .navbar-links a {
+        font-size: 1.5rem; /* Уменьшаем размер шрифта *
+        padding: 0.5rem 1rem; /* Уменьшаем отступы *
+    }*/
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 4rem;
+    }
+
+    
+    .navbar-links {
+        display: flex;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+
+
+    /* Основной контент */
+    main {
+        width: 95%; /* Сужаем ширину основного контента */
+        margin-top: 0rem; /* Увеличиваем отступ сверху */
+        padding: 5rem; /* Уменьшаем отступы */
+    }
+
+    .things {
+        margin-left: -2rem;
+    }
+
+    /* Карточки */
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Жестко задаем 2 колонки */
+        gap: 2rem; /* Расстояние между карточками */
+        column-gap: 7rem;
+        margin-top: -28rem;
+        padding:  2rem;
+    }
+
+    .card {
+        width: 150%; /* Увеличиваем ширину карточки */
+        
+    }
+
+    .card img {
+        width: 100%; /* Оставляем изображения в пределах карточки */
+        max-width: none;
+    }
+
+    .card p {
+        font-size: 1.25rem; /* Уменьшаем размер шрифта */
+    }
+
+    /* Фильтры */
+    .filter-container {
+        top: 10rem; /* Уменьшаем отступ сверху */
+        left: 5%; /* Сужаем отступ слева */
+        width: 90%; /* Уменьшаем ширину */
+        margin-bottom: 1.5rem; /* Отступ снизу для разделения с другими элементами */
+    }
+
+    /* Поиск */
+    .search-container {
+        width: 90%; /* Уменьшаем ширину поиска */
+        height: auto; /* Делаем высоту адаптивной */
+        margin: 12rem auto; /* Центрируем по горизонтали и добавляем отступы */
+    }
+
+    #search-bar {
+        font-size: 1.5rem; /* Уменьшаем размер шрифта */
+        padding: 0.75rem; /* Уменьшаем внутренние отступы */
+        width: 100%; /* Растягиваем по ширине контейнера */
+        margin-top: 1rem;
+    }
+
+    /* Корзина */
+    .cart-container {
+        width: 35%; /* Увеличиваем ширину корзины */
+        margin-top: -16rem;
+    }
+}
+
+
+
+/* Адаптация для планшетов */
+@media (min-width: 760px) and (max-width: 1024px) {
+    .navbar-menu-icon {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+
+    .filter-container {
+        order: -1;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+
+
+
+/* Адаптация для мобильных */
+@media  (max-width: 768px) {
+    /*navbar*/
+    .navbar {
+        margin: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .navbar-logo img {
+        order: 1; /* Логотип переместится в начало */
+        margin-left: -.5rem;
+        width: 7rem;
+    }
+
+    .navbar-menu-icon {
+        display: block; /* Показываем иконку меню */
+        order: 2;
+    }
+
+    .navbar-links {
+        display: none; /* Скрываем ссылки */
+        flex-direction: column;
+        gap: 1;
+        position: absolute;
+        top: 6rem; /* Расположение под навбаром */
+        left: 0;
+        width: 100%;
+        background-color: #4E3620;
+        padding: 1rem 0;
+        transform: translateY(-20px); /* Слегка смещаем меню вверх */
+        pointer-events: none; /* Блокируем клики, пока меню скрыто */
+        transition: all;
+        
+    }
+
+    .navbar-links a {
+        padding: 0.5rem 1rem;
+        color: #fff;
+        text-align: center;
+        display: block;
+    }
+
+    .navbar-links a:hover{
+        color: #F4A261;
+    }
+
+    .navbar-links.active {
+        display: flex;  /*Показываем ссылки при активации */
+        opacity: 1;
+        transform: translateY(0); /* Возвращаем меню на место */
+        pointer-events: all; /* Разрешаем клики */
+    }
+
+
+    main {
+        width: 90%;
+        margin-top: -5rem;
+    }
+
+
+    #recipes-container{
+        display: grid;
+        grid-template-rows: repeat(1, 1fr); /* 3 колонки одинаковой ширины */
+        row-gap: 25rem; /* Отступы между строками */
+        
+    }
+
+    .card{
+        width: 20rem;
+        height: 35rem;
+        margin: -10rem -.5rem;
+        text-align: center;
+    }
+
+    .card h1{
+        margin: 19rem auto;
+    }
+    .card h2{
+        margin: -18.5rem auto;
+    }
+
+    .card h3{
+        margin: 19rem auto;
+    }
+
+    .card .time img{
+        margin: 25rem 4rem;
+    }
+
+    .card .time p{
+        margin: -17.5rem 3rem;
+    }
+
+   .button_1 button{
+        position: absolute;
+        margin: -13rem -7.5rem;
+    }
+
+
+    section {
+        padding: 3rem 3rem; /* Для еще меньших экранов */
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+
+        gap: 2.5rem;
+    }
+    
+    .footer-content .footer-icons{
+        margin-top: 2rem;
+        margin-left: -6.5rem;
+    }
+
+    
+
+    .footer-bottom p{
+        color: #F4A261;
+        margin: 1rem 5rem .5rem 6rem;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .footer-bottom .designed {
+        color: #ccc;
+        font-family: "Lavishly Yours", cursive;
+        font-size: 28px;
+        font-weight: 600;
+    }
+}
+
+@media  (max-width: 390px) {
+    .card-container {
+        margin-top: 1rem;
+           
+    }
+
+    .card {
+        margin-left: -1rem;
+        margin-right: -1rem;/**/ 
+        width: auto;
+    }
+    
+    .things {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        width: auto;
+    }
+
+
+    section {
+        padding: 3rem 3rem; /* Для еще меньших экранов */
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+
+        gap: 2.5rem;
+    }
+    
+    .footer-content .footer-icons{
+        margin-top: 2rem;
+        margin-left: -6.5rem;
+    }
+
+    
+
+    .footer-bottom p{
+        color: #F4A261;
+        margin: 1rem 5rem .5rem 6rem;
+        font-size: 18px;
+        font-weight: 500;
+    }
+    
+    .footer-bottom .designed {
+        color: #ccc;
+        font-family: "Lavishly Yours", cursive;
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+}
