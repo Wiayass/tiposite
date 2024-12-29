@@ -583,6 +583,7 @@ section{
     main {
         width: 90%;
         margin-top: -5rem;
+        text-align: center;
     }
 
 
@@ -593,11 +594,17 @@ section{
         
     }
 
-    .card{
+    .card {
         width: 20rem;
         height: 35rem;
-        margin: -10rem -.5rem;
+        margin: -10rem auto;
         text-align: center;
+    }
+
+    .card img {
+        width: 16rem;
+        height: 16rem;
+        margin: 1rem 1rem;
     }
 
     .card h1{
@@ -618,6 +625,7 @@ section{
     .card .time p{
         margin: -17.5rem 3rem;
     }
+
 
    .button_1 button{
         position: absolute;
@@ -658,42 +666,113 @@ section{
     }
 }
 
-@media  (max-width: 390px) {
-    .card-container {
-        margin-top: 1rem;
-           
+@media  (max-width: 430px) {
+    
+    /*navbar*/
+    .navbar {
+        margin: 0;
+        width: 115%;
+        flex-direction: row;
+        justify-content: space-between;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    
+    .navbar-menu-icon {
+        display: block; /* Показываем иконку меню */
+        order: 2;
+    }
+
+    .navbar-links {
+        display: none; /* Скрываем ссылки */
+        flex-direction: column;
+        gap: 1;
+        position: absolute;
+        top: 6rem; /* Расположение под навбаром */
+        left: 0;
+        width: 100%;
+        background-color: #4E3620;
+        padding: 2rem 0;
+        transform: translateY(-20px); /* Слегка смещаем меню вверх */
+        pointer-events: none; /* Блокируем клики, пока меню скрыто */
+        transition: all;
+        
+    }
+
+    .navbar-links a {
+        padding: 0.5rem 1rem;
+        color: #fff;
+        text-align: center;
+        display: block;
+    }
+
+    .navbar-links a:hover{
+        color: #F4A261;
+    }
+
+    .navbar-links.active {
+        display: flex;  /*Показываем ссылки при активации */
+        opacity: 1;
+        transform: translateY(0); /* Возвращаем меню на место */
+        pointer-events: all; /* Разрешаем клики */
+    }
+
+
+    main {
+        width: 90%;
+        margin-top: -5rem;
+        text-align: center;
     }
 
     .card {
-        margin-left: -1rem;
-        margin-right: -1rem;/**/ 
-        width: auto;
+        width: 20rem;
+        height: 35rem;
+        margin: -10rem auto;
+        text-align: center;
     }
+
     
-    .things {
-        margin-left: 1rem;
-        margin-right: 1rem;
-        width: auto;
-    }
-
-
-    section {
-        padding: 3rem 3rem; /* Для еще меньших экранов */
-    }
 
     .footer {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, auto));
-
-        gap: 2.5rem;
-    }
-    
-    .footer-content .footer-icons{
-        margin-top: 2rem;
-        margin-left: -6.5rem;
+        display: flex;
+        width: 130%;
+        flex-direction: column; /* Перевод элементов в колонку */
+        gap: 1rem; /* Интервал между блоками */
     }
 
+    .footer-content .footer-icons {
+        margin-left: -15rem;
+    }
+
+    .footer-content img{
+        width: 10rem;
+        margin-top: -1rem;
+        margin-left: -12rem;
+    }
+
+    .footer-content p{
+        
+        margin-top: -8rem;
+        margin-left: 12.5rem;
+    }
+
+
     
+
+    .footer-content {
+        order: 2; /* Контент идет ниже иконок */
+    }
+
+    
+
+    .footer-content, .footer h3 {
+        text-align: center; /* Центровка текста для мобильных */
+        margin: 0; /* Убираем лишние отступы */
+    }
+
+    .footer-bottom{
+        width: 130%;
+    }
 
     .footer-bottom p{
         color: #F4A261;
