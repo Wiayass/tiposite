@@ -591,161 +591,335 @@ section{
 }
 
 
-@media (max-width: 1690px){
-    section{
-        padding: 2rem 20rem 1rem;
-    }
-}
 
-@media (max-width: 1200px){
-    .footer {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-        gap: 2rem;
-    }
-}
-
-
-@media (min-width: 1024px) and (max-width: 2000px)  {
-    /*.navbar {
-
-        left: -2%;
+@media (max-width: 1920px) {
+    .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        padding: 0rem 20rem;
-        color: white; /*Уменьшаем отступы *
-        /*flex-wrap: wrap;  Делаем элементы настраиваемыми *
-
-        color: white;
-        
-    }
-
-    .navbar-logo {
-        left: 1rem; /* Уменьшаем отступ слева *
-        flex: 1; /* Логотип занимает часть пространства *
+        z-index: 1000;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
+        padding: 1rem 20rem;
+        /*background-color: #C9A66B;*/
+        color: white;
+        font-family: "Montserrat", sans-serif;
     }
+    
 
-    .navbar-links {
-        display: flex;
-        justify-content: flex-end;
-        flex-wrap: wrap; /* Перенос ссылок на новую строку при недостатке места *
-        flex: 4; /* Увеличиваем пространство для ссылок *
-        margin-left: 0;
-        gap: 1rem; /* Увеличиваем расстояние между ссылками *
+    .footer-bottom {
+        background-color: #432e1a;
+        display: flex; /* Добавляем flexbox для центрирования */
+        justify-content: center; /* Горизонтальное центрирование содержимого */
+        align-items: center; /* Вертикальное центрирование содержимого */
+        text-align: center; /* На всякий случай добавляем центрирование текста */
+        padding: 1rem; /* Добавляем внутренние отступы */
     }
+    
+    .footer-bottom p {
+        color: #F4A261;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0; /* Убираем автоматические отступы, которые могут мешать */
+    }
+    
+    .footer-bottom .designed {
+        color: #ccc;
+        font-family: "Lavishly Yours", cursive;
+        font-size: 28px;
+        font-weight: 600;
+        margin-top: 0.5rem; /* Если нужно отступить ниже основного текста */
+    }
+}
 
-    .navbar-links a {
-        font-size: 1.5rem; /* Уменьшаем размер шрифта *
-        padding: 0.5rem 1rem; /* Уменьшаем отступы *
-    }*/
+
+
+
+@media (max-width: 1366px) {
 
     .navbar {
-        flex-direction: row;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
         justify-content: space-between;
-        padding: 1rem 4rem;
+        align-items: center;
+        padding: 1rem 10rem;
+        /*background-color: #C9A66B;*/
+        color: white;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    
+
+
+    
+    
+    .search-container {
+        width: 100%;
+        display: flex;
+        opacity: 0;
+        transform: translateY(50px); /* Смещены вниз */
+        transition: opacity 0.6s ease, transform 1.4s ease; /* Плавная анимация */
+    }
+    
+    /* Карточки */
+    .card-container {
+        margin-top: 10rem;
+        margin-left: auto;
+        display: grid; /* Ensure grid display */
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 3fr)); /* 250px / 16 */
+        gap: 1.25rem; /* 20px / 16 */
+        opacity: 0;
+        align-items: center; /* Center items vertically within the grid */
+        transform: translateY(50px); /* Смещены вниз */
+        transition: opacity 0.6s ease, transform 1.4s ease; /* Плавная анимация */
+    }
+    
+    .card-container.show {
+        opacity: 1; /* Полная видимость */
+        transform: translateY(0); /* Возврат на место */
+    }
+    
+    .things {
+        margin: auto;
+        opacity: 0;
+        transform: translateY(50px); /* Смещены вниз */
+        transition: opacity 0.6s ease, transform 1.5s ease; /* Плавная анимация */
+    }
+    
+    .things.show {
+        opacity: 1; /* Полная видимость */
+        transform: translateY(0); /* Возврат на место */
     }
 
     
-    .navbar-links {
-        display: flex;
+    
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(2rem, 3fr));
+        background-color: #4E3620;
+        gap: 9rem;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        transform: translateY(50px); /* Смещены вниз */
+        transition: opacity 0.6s ease, transform 1.4s ease; /* Плавная анимация */
     }
 
-    .navbar-links.active {
-        display: flex;
+    
+    .footer.show{
+        opacity: 1; /* Полная видимость */
+        transform: translateY(0); /* Возврат на место */
+    }
+    
+    
+    .footer-content img{
+        width: 10rem;
+        margin-left: -20rem;
+    }
+    .footer-content h4{
+        color: #F4A261;
+        margin-bottom: 1.5rem;
+        font-size: 18px;
+    }
+    
+    .footer-content li{
+        margin-bottom: .5rem;
+    }
+    
+    .footer-content li a{
+        display: block;
+        color: #8D9777;
+        font-size: 16px;
+        font-weight: 300;
+        transition: all .3s ease;
+    }
+    
+    .footer-content li a:hover{
+        transform: translateY(-.110rem);
+        color: #fff;
+    }
+    
+    .footer-content p{
+        color: #F4A261;
+        font-size: 14px;
+        font-weight: 300;
+        margin-left: -10rem;
+        margin-top: -8rem;
+        line-height: 30px;
+    }
+    
+    .footer-icons{
+        margin-left: -20rem;
+        margin-top: .5rem;
+    }
+    
+    .footer-icons a{
+        display: inline-block;
+        font-size: 22px;
+        color: #F4A261;
+        
+        transition: all .3s ease;
+    }
+    
+    .footer-icons a:hover{
+        color: #fff;
+        transform: translateY(-.110rem);
+    }
+    
+    
+    
+    
+
+
+
+
+    .footer-bottom {
+        background-color: #432e1a;
+        display: flex; /* Добавляем flexbox для центрирования */
+        justify-content: center; /* Горизонтальное центрирование содержимого */
+        align-items: center; /* Вертикальное центрирование содержимого */
+        text-align: center; /* На всякий случай добавляем центрирование текста */
+        padding: 1rem; /* Добавляем внутренние отступы */
+    }
+    
+    .footer-bottom p {
+        color: #F4A261;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0; /* Убираем автоматические отступы, которые могут мешать */
+    }
+    
+    .footer-bottom .designed {
+        color: #ccc;
+        font-family: "Lavishly Yours", cursive;
+        font-size: 28px;
+        font-weight: 600;
+        margin-top: 0.5rem; /* Если нужно отступить ниже основного текста */
     }
 
+    
+    
+}
 
 
-    /* Основной контент */
+@media (max-width: 1024px) {
+    .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5rem;
+        /*background-color: #C9A66B;*/
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        opacity: 0;
+        transition: opacity 0.6s ease, transform 1.5s ease; /* Плавная анимация */
+    }
+    
+    .navbar.show{
+        opacity: 1; /* Полная видимость */
+    }
+    
+    
     main {
-        width: 95%; /* Сужаем ширину основного контента */
-        margin-top: 0rem; /* Увеличиваем отступ сверху */
-        padding: 5rem; /* Уменьшаем отступы */
+        width: 100%;
+        margin-top: -15rem;
+    }
+    
+
+    .search-container{
+        width: 90%;
     }
 
-    .things {
-        margin-left: -2rem;
+    .things{
+        height: auto;
+        margin: auto;
+        align-items: center;
     }
 
-    /* Карточки */
+    
+
+    #product-search-bar {
+        width: 100%;
+        margin-top: .5rem;
+        margin-left: 0;
+        padding: 0rem 2.3rem;
+        font-size: 16px;
+    }
+
+    :root {
+        --search-width: 90%;
+    }
+
+    #results-container{
+        width: calc(var(--search-width) * 0.9); /* 300px */
+        margin-top: -20rem;
+        align-items: center;
+    }
+
+    .line{
+        width: 100%;
+        height: .2rem;
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+
+    .cart-container{
+        width: 100%;
+        margin-top: 2rem;
+        margin-left: 0rem;
+    }
+
+
     .card-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Жестко задаем 2 колонки */
-        gap: 2rem; /* Расстояние между карточками */
-        column-gap: 7rem;
-        margin-top: -28rem;
-        padding:  2rem;
+        align-items: center;
+        margin: auto;
+        grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr)); /* 250px / 16 */
+        gap: 1.25rem; /* 20px / 16 */
+        padding: 2rem 5rem 0 5rem;
     }
 
-    .card {
-        width: 150%; /* Увеличиваем ширину карточки */
-        
+    
+    
+
+    
+
+    #get-recipes-btn{
+        font-size: 16px;
+        height: 5%;
     }
 
-    .card img {
-        width: 100%; /* Оставляем изображения в пределах карточки */
-        max-width: none;
+    /* Стили для всплывающего сообщения */
+    #recipes-output {
+        position: fixed;
+        margin-top: -50rem;
+        right: -300px; /* Начальное положение за экраном */
+        transform: translateY(-50%); /* Центровка по оси Y */
+        width: 100%; /* Ширина таблички */
+        border-radius: 8px; /* Закругленные углы */
+        transition: right 0.5s ease-in-out; /* Плавное выдвижение */
+        z-index: 1000; /* Поверх других элементов */
     }
 
-    .card p {
-        font-size: 1.25rem; /* Уменьшаем размер шрифта */
+    /* Видимая позиция таблички */
+    #recipes-output.active {
+        right: 20px; /* Конечное положение таблички */
     }
 
-    /* Фильтры */
-    .filter-container {
-        top: 10rem; /* Уменьшаем отступ сверху */
-        left: 5%; /* Сужаем отступ слева */
-        width: 90%; /* Уменьшаем ширину */
-        margin-bottom: 1.5rem; /* Отступ снизу для разделения с другими элементами */
-    }
-
-    /* Поиск */
-    .search-container {
-        width: 90%; /* Уменьшаем ширину поиска */
-        height: auto; /* Делаем высоту адаптивной */
-        margin: 12rem auto; /* Центрируем по горизонтали и добавляем отступы */
-    }
-
-    #search-bar {
-        font-size: 1.5rem; /* Уменьшаем размер шрифта */
-        padding: 0.75rem; /* Уменьшаем внутренние отступы */
-        width: 100%; /* Растягиваем по ширине контейнера */
-        margin-top: 1rem;
-    }
-
-    /* Корзина */
-    .cart-container {
-        width: 35%; /* Увеличиваем ширину корзины */
-        margin-top: -16rem;
-    }
 }
-
-
-
-/* Адаптация для планшетов */
-@media (min-width: 760px) and (max-width: 1024px) {
-    .navbar-menu-icon {
-        display: block;
-    }
-
-    .navbar-links {
-        display: none;
-    }
-
-    .filter-container {
-        order: -1;
-    }
-
-    .card-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-
-
 
 
 /* Адаптация для мобильных */
@@ -817,8 +991,9 @@ section{
 
 
     main {
-        width: 100%;
+        width: 95%;
         margin-top: -15rem;
+        align-items: center;
     }
 
     .search-container{
@@ -826,21 +1001,13 @@ section{
     }
 
     .things{
-        width: 95%;
+        width: auto;
         height: auto;
-        margin-top: -3rem;
-        margin-left: .7rem
+        margin: auto;
+        align-items: center;
     }
 
-    .things h1{
-        font-size: 44px;
-
-    }
-
-    .things p{
-        width: 100%;
-        font-size: 24px;
-    }
+    
 
     #product-search-bar {
         width: 100%;
@@ -885,8 +1052,7 @@ section{
     .card-container {
         display: grid;
         margin-top: 1rem;
-        margin-left: 0rem;/**/
-        grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr)); /* 250px / 16 */
+        grid-template-columns: 2fr; /* 250px / 16 */
         gap: 1.25rem; /* 20px / 16 */
         padding: 2rem 5rem 0 5rem;
     }
@@ -894,9 +1060,6 @@ section{
     
     
 
-    .card {
-        width: auto;
-    }
 
     #get-recipes-btn{
         font-size: 16px;
