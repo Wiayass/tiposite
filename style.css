@@ -1415,6 +1415,12 @@ ul{
     .mainpart img{
         width: 90%;
     }
+    .mainpart cite{
+        margin: 0;
+    }
+    .mainpart cite a{
+        margin-left: 12rem;
+    }
 
     .about-container {
         display: flex; /* Флекс-контейнер */
@@ -1442,8 +1448,8 @@ ul{
         margin: auto;
     }
 
-    .forms iframe{
-        width: 300px;
+    .feedback .forms iframe{
+        width: 90%;
         margin: auto;
     }
 
