@@ -352,6 +352,32 @@ document.addEventListener("DOMContentLoaded", () => {
     animatedElements.forEach(element => observer.observe(element));
 });
 
+//cite_block
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".cite_block");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Элемент в зоне видимости — добавляем класс
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // Отключаем наблюдение за этим элементом
+            } else {
+                // Для невидимых элементов (опционально)
+                entry.target.classList.remove("show");
+            }
+        });
+    }, {
+        threshold: 0.1 // Процент видимости элемента, после которого срабатывает анимация
+    });
+
+    animatedElements.forEach(element => observer.observe(element));
+});
+
+
+
+
+
 //card
 document.addEventListener("DOMContentLoaded", () => {
     const animatedElements = document.querySelectorAll(".card-container");
@@ -400,6 +426,184 @@ document.addEventListener("DOMContentLoaded", () => {
 //footer-bottom
 document.addEventListener("DOMContentLoaded", () => {
     const animatedElements = document.querySelectorAll(".footer-bottom");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Элемент в зоне видимости — добавляем класс
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // Отключаем наблюдение за этим элементом
+            } else {
+                // Для невидимых элементов (опционально)
+                entry.target.classList.remove("show");
+            }
+        });
+    }, {
+        threshold: 0.1 // Процент видимости элемента, после которого срабатывает анимация
+    });
+
+    animatedElements.forEach(element => observer.observe(element));
+});
+
+
+
+//slider
+
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".animated-element");
+    
+    // Функция для добавления класса 'show' ко всем элементам
+    animatedElements.forEach((element, index) => {
+            setTimeout(() => {
+                element.classList.add("show");
+            }, index * 500); // Задержка для последовательного появления
+        });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const slidesContainer = document.querySelector(".slides");
+        const slides = document.querySelectorAll(".slide");
+        const prevButton = document.querySelector(".prev");
+        const nextButton = document.querySelector(".next");
+
+        const gap = 20; // Расстояние между слайдами
+        const slideWidth = slides[0].clientWidth + gap; // Ширина слайда + gap
+        let currentIndex = 0; // Стартовая позиция (учитываем дополнительные клоны)
+
+        // Клонируем слайды
+        const totalSlides = slides.length;
+        const clonesBefore = [];
+        const clonesAfter = [];
+
+        // Создаем клоны для начала и конца
+        slides.forEach((slide, index) => {
+            const cloneBefore = slide.cloneNode(true);
+            const cloneAfter = slide.cloneNode(true);
+
+            cloneBefore.classList.add("clone");
+            cloneAfter.classList.add("clone");
+
+            clonesBefore.push(cloneBefore);
+            clonesAfter.push(cloneAfter);
+        });
+
+        // Функция для перехода к предыдущему слайду
+        function prevSlide() {
+            if (currentIndex <= 0) {
+                // Если это первый слайд, плавно переходим к клону последнего
+                slidesContainer.style.transition = "transform 3s ease";
+                currentIndex--;
+                slidesContainer.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+
+                // Через небольшую задержку переключаемся на оригинальный последний слайд без анимации
+                setTimeout(() => {
+                    slidesContainer.style.transition = "none";
+                    currentIndex = totalSlides - 1;
+                    slidesContainer.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+                }, 5000);
+            } else {
+                currentIndex--;
+                slidesContainer.style.transition = "transform 3s ease";
+                slidesContainer.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+            }
+        }
+
+        // Автоматическое переключение
+        let autoSlideInterval = setInterval(nextSlide, 5000);
+
+        // Добавляем клонированные элементы в DOM
+        clonesBefore.reverse().forEach((clone) => {
+            slidesContainer.insertBefore(clone, slidesContainer.firstChild);
+        });
+
+        clonesAfter.forEach((clone) => {
+            slidesContainer.appendChild(clone);
+        });
+
+        const allSlides = document.querySelectorAll(".slide"); // Обновляем NodeList после клонирования
+        slidesContainer.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+
+        // Перемещение слайдов
+        function moveToIndex(index) {
+            slidesContainer.style.transition = "transform 3s ease";
+            slidesContainer.style.transform = `translateX(${-slideWidth * index}px)`;
+        }
+
+        function nextSlide() {
+            currentIndex++;
+            moveToIndex(currentIndex);
+
+            if (currentIndex >= totalSlides + 2) {
+                setTimeout(() => {
+                    slidesContainer.style.transition = "none";
+                    currentIndex = 2; // Возвращаемся на оригинальный первый слайд
+                    slidesContainer.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+                }, 5000);
+            }
+        }
+
+        function prevSlide() {
+            currentIndex--;
+            moveToIndex(currentIndex);
+
+            if (currentIndex <= 1) {
+                setTimeout(() => {
+                    slidesContainer.style.transition = "none";
+                    currentIndex = totalSlides + 1; // Возвращаемся на оригинальный последний слайд
+                    slidesContainer.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+                }, 5000);
+            }
+        }
+
+        nextButton.addEventListener("click", nextSlide);
+        prevButton.addEventListener("click", prevSlide);
+
+        // Обработка свайпов
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        slidesContainer.addEventListener("touchstart", (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        slidesContainer.addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+
+            if (touchStartX > touchEndX + 50) {
+                nextSlide();
+            } else if (touchStartX < touchEndX - 50) {
+                prevSlide();
+            }
+        });
+    });
+
+
+    //slider
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".slider");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Элемент в зоне видимости — добавляем класс
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target); // Отключаем наблюдение за этим элементом
+            } else {
+                // Для невидимых элементов (опционально)
+                entry.target.classList.remove("show");
+            }
+        });
+    }, {
+        threshold: 0.1 // Процент видимости элемента, после которого срабатывает анимация
+    });
+
+    animatedElements.forEach(element => observer.observe(element));
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedElements = document.querySelectorAll(".aboutus");
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
