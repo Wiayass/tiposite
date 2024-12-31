@@ -1380,8 +1380,6 @@ ul{
     }
 
 
-    
-
 
     .footer-content {
         width: 50%;
@@ -1419,7 +1417,7 @@ ul{
         margin: 0;
     }
     .mainpart cite a{
-        margin-left: 12rem;
+        margin-left: 11rem;
     }
 
     .about-container {
@@ -1448,8 +1446,13 @@ ul{
         margin: auto;
     }
 
+    .feedback img{
+        width: 100%;
+        margin: 2rem auto;
+    }
+
     .feedback .forms iframe{
-        width: 90%;
+        width: 100%;
         margin: auto;
     }
 
