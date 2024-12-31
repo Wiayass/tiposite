@@ -1457,3 +1457,15 @@ ul{
     }
 
 }
+
+@media  (max-width: 412px){
+    .feedback img{
+        width: 100%;
+        margin: 2rem auto;
+    }
+
+    .feedback .forms iframe{
+        width: 100%;
+        margin: auto;
+    }
+}
