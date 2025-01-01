@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    
-    <title>Фитнес программы</title>
 
+    <title>Recipe</title>
 
     <style>
+        
         @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oswald:wght@200..700&display=swap');
         /*Ru language*/
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 
 
@@ -31,16 +33,16 @@
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
             background-color: #f9f5ef;
         }
-
 
         .navbar {
             position: absolute;
@@ -56,6 +58,7 @@
             color: white;
             font-family: "Montserrat", sans-serif;
         }
+
 
 
 
@@ -164,123 +167,101 @@
 
         .navbar-menu-icon.active .line:nth-child(3) {
             transform: translateY(-10px) rotate(-45deg);
-        }   
-
-        .programstitle h1{
-            font-family: "Bitter", sans-serif;
-            font-size: 5rem;
-            color: #8D9777;
-            margin-top: 17rem;
         }
 
-
-        /* Основной контент */
+            /* Основной контент */
         main {
             width: 100%;
             max-width: 80rem;
             margin: auto;
-            margin-top: 5rem;
-            margin-bottom: 20rem;
             align-items: center;
         }
 
 
-        #programs-container{
-            display: grid;
-            grid-template-rows: repeat(1, 1fr); /* 3 колонки одинаковой ширины */
-            row-gap: 2rem; /* Отступы между строками */
-            margin: 5rem auto;
-            align-items: center;
+        .desctitle {
+            font-family: "Bitter", cursive;
+            font-size: 3rem;
+            color: #4E3620;
+            text-align: center;
+            margin: 20rem auto;
         }
 
 
-
-        .card {
-            width: auto;
-            height: auto;
+        .programform{
             background-color: #fff;
-            transition: transform 0.3s ease;
-            cursor: pointer;
-            margin-top: 5rem;
+            width: 100%;
+            border-radius: 10px;
+            height: auto;
             align-items: center;
-        }
-        .card:hover {
-            transform: translateY(-0.3125rem); /* 5px / 16 */
+            margin-top: -15rem;
+            margin-bottom: 10rem;
         }
 
-        .card img {
-            background-size: cover;
+        .programform h1{
+            font-family: "Bitter", cursive;
+            font-size: 3rem;
+            color: #4E3620;
+            text-align: center;
+            margin: 1rem;
+        }
+
+        
+
+        .program-details {
+            margin: auto;
+            align-items: center;
+        }
+
+        .programform h3{
+            font-family: "Bitter", cursive;
+            font-size: 4rem;
+            color: #4E3620;
+            text-align: left;
+            margin: 1rem 3rem;
+        }
+
+
+
+
+        .program-time{
+            font-family: "Bitter", cursive;
+            font-size: 1.5rem;
+            color: #4E3620;
+            margin:2rem 6rem;
+            align-items: center;
+        }
+
+
+        .programform img{
             width: 100%;
             height: 30rem;
-            margin: auto;
-            border-radius: 8px 8px 0 0; /* Закругленные углы */
-        }
-
-
-
-        .programs-info {
-            padding: 2rem;
-            align-items: center;
-            text-align: center;
-            margin: auto;
-            width: auto; /* Оптимальная ширина для читабельности */
-            background-color: #f9f4ef;  /*Светлый фон */
-            border-left: 4px solid #F4A261; /* Цветная полоска для акцента */
-            border-radius: 0 0 8px 8px; /* Закругленные углы */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
-        }
-
-        .programs-info h1{
-            font-family: "Montserrat", sans-serif;
-            font-size: 2.2rem;
-            color: #4E3620;
-            margin-top: -.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .programs-info h2{
-            font-family: "Bitter", sans-serif;
-            font-size: 1.2rem;
-            color: #4E3620;
-            margin: .5rem auto;
-        }
-
-
-        .programs-info__item{
-            color: #432e1a;
             align-items: center;
             margin: auto;
-            font-size: 1.15rem;
-            margin-bottom: 2rem;
+        }
+
+        .programform ul{
+            font-family: "Bitter", cursive;
+            font-size: 1.5rem;
+            color: #4E3620;
+            margin: 2rem 7rem;
         }
 
        
 
-        .button_1 button{
-            margin: auto;
-            width: 20rem;
-            height: 3rem;
-            border: none;
-            background-color: #8D9777;
-            border-radius: .7rem;
+
+
+
+        .programform a{
+            font-family: "Bitter", cursive;
+            font-size: 2.5rem;
+            color: #4E3620;
+            text-align: left;
+            margin: 1rem 3rem;
         }
 
-        .button_1 a{
-            color: #fff;
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: 450;
-            font-family: "Bitter", sans-serif;
-        }
-
-        .button_1 button:hover{
-            background-color: #F4A261;
+        .programform a:hover{
             cursor: pointer;
         }
-
-
-
-
 
         /* footer */
 
@@ -302,8 +283,8 @@
             padding: 70px 0;
         }
         .footer-content{
-            width: 25%;
-            padding: 0 15px;
+        width: 25%;
+        padding: 0 15px;
         }
         .footer-content h4{
             font-size: 18px;
@@ -385,7 +366,8 @@
             font-weight: 600;
         }
 
-        @media (max-width: 1920px){
+
+        @media (max-width: 1920px) {
             .navbar {
                 position: absolute;
                 top: 0;
@@ -395,38 +377,45 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 1rem 25rem;
+                padding: 1rem 20rem;
                 /*background-color: #C9A66B;*/
                 color: white;
                 font-family: "Montserrat", sans-serif;
-            }
-
-        }
-
-        @media (max-width: 1366px){
-            .navbar {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                z-index: 1000;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 1rem 15rem;
-                /*background-color: #C9A66B;*/
-                color: white;
-                font-family: "Montserrat", sans-serif;
-            }
-
-            .card{
-                width: 60rem;
-                margin:2rem auto;
             }
             
         }
 
-        @media (max-width: 1024px){
+
+
+
+        @media (max-width: 1366px) {
+
+            .navbar {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 10rem;
+                /*background-color: #C9A66B;*/
+                color: white;
+                font-family: "Montserrat", sans-serif;
+            }
+            
+            main{
+                width: 90%;
+            
+            }
+            
+            
+            
+        }
+
+
+        @media (max-width: 1024px) {
             .navbar {
                 position: absolute;
                 top: 0;
@@ -441,23 +430,28 @@
                 color: white;
                 font-family: "Montserrat", sans-serif;
             }
-
-            .footer-content{
-                width: 30%;
-                padding: 0 3rem;
+            
+            main{
+                width: 90%;
+                align-items: center;
             }
-
-            .card{
-                width: 50rem;
-                margin:2rem auto;
-            }
+            
             
         }
 
 
 
+
         /* Адаптация для мобильных */
         @media  (max-width: 768px) {
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f9f5ef;
+                color: #333;
+            }
+            
             /*navbar*/
             .navbar {
                 flex-direction: row;
@@ -510,17 +504,8 @@
                 transform: translateY(0); /* Возвращаем меню на место */
                 pointer-events: all; /* Разрешаем клики */
             }
-            .programstitle h1{
-                font-family: "Bitter", sans-serif;
-                font-size: 4rem;
-                color: #8D9777;
-                margin-top: 17rem;
-            }
-
-            .card{
-                width: 40rem;
-                margin:2rem auto;
-            }
+            
+            
 
 
             .footer-content {
@@ -528,40 +513,44 @@
                 margin-bottom: 30px;
             }
 
+
         }
 
-        @media (max-width: 430px){
-            .navbar {
-                width: 100%;
+
+        @media  (max-width: 430px){
+
+            .desctitle h1{
+                width: 70%;
+                font-size: 4rem;
             }
 
-            .card{
-                width: 90%;
-                margin-left: auto;
-                margin-right: auto;
+            .programform ul{
+                font-family: "Bitter", cursive;
+                font-size: 1.5rem;
+                color: #4E3620;
+                margin: 2rem 2rem;
             }
 
-            .button_1 button{
-                width: 15rem;
-                height: 2.5rem;
+            .programform a{
+                font-family: "Bitter", cursive;
+                font-size: 1.7rem;
+                color: #4E3620;
+                align-items: center;
+                margin: 1rem auto;
             }
 
-            .footer {
-                width: 100%;
+            .programform a:hover{
+                cursor: pointer;
             }
 
-            .footer-bottom{
-                width: 100%;
-            }
+            
         }
-
     </style>
-
-
 </head>
+
+
 <body>
 
-    <!-- ШАПКА -->
     <!--NAVBAR-->
     <nav>
         <header class="navbar">
@@ -577,29 +566,41 @@
             
 
             <nav class="navbar-links" id="navbar-links1">
-                <a href="index.html">Главная</a> 
+                <a href="/index.html">Главная</a> 
                 <a href="ConsoleApplication1/recipes.html">Рецепты</a>
-                <a href="pitanie.html">Питание</a>
-                <a href="contact.html">Контакты</a>
+                <a href="/pitanie.html">Питание</a>
+                <a href="/contact.html">Контакты</a>
             </nav>
         </header>
     </nav>
 
     <!--END NAVBAR-->
 
-    <div class="programstitle">
-        <h1>Программы питания</h1>
+    <div class="desctitle">
+        <h1 id="desctitle"></h1>
     </div>
 
     <main>
-        <section id="programs-container">
+        
+        <div class="programform">
+
+            <img id="imageid" alt="">
+            <div class="program-details">
+                <div class="program-time">
+                    
+                    <i class="fas fa-clock"></i><span id="timeprogram"></span>
+                </div> <!-- время приготовления -->
+            </div>
             
-        </section>
+            
+            <h3>Что нужно делать?</h3>
+            <ul id="program-instructions"></ul>
 
+
+            <a href="pitanie.html">Назад к питаниям</a>
+        </div>
+        
     </main>
-
-
-    
 
     <!--FOOTER-->
 
@@ -612,9 +613,9 @@
                 <div class="footer-content">
                     <h4>Кулинария</h4>
                     <ul>
-                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="/index.html">Главная</a></li>
                         <li><a href="ConsoleApplication1/recipes.html">Рецепты</a></li>
-                        <li><a href="pitanie.html">Питание</a></li>
+                        <li><a href="/pitanie.html">Питание</a></li>
                         <li><a href="#">Контакты</a></li>
                     </ul>
                 </div>
@@ -634,7 +635,7 @@
                             <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"><i class='bx bxl-youtube'></i></a>
                             <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTJGLzsFnjNxpQbvfsvZtlbDJgRvxlDNQCxzvRtSjCLQNBZGxMwhnnlVSRDVBCMSZNmhrL"><i class='bx bxl-gmail'></i></a>
                             <a href="https://web.telegram.org/k/#@stikval"><i class='bx bxl-telegram'></i></a>
-                            <a href="https://www.instagram.com/wiayass/"><i class='bx bxl-instagram' ></i></a>    
+                            <a href="https://www.instagram.com/wiayass/"><i class='bx bxl-instagram' ></i></a>  
                         </div>
                 </div>
 
@@ -651,7 +652,7 @@
 
     <script>
 
-        // Получаем элементы
+        // Получаем элементы Navbar
         const menuToggle1 = document.getElementById('menu-toggle1');
         const navbarLinks1 = document.getElementById('navbar-links1');
 
@@ -662,67 +663,38 @@
         });
 
 
-        
+        // Закрытие списка подсказок при клике вне поля
+        document.addEventListener("click", (e) => {
+            if (!e.target.closest(".search-container")) {
+                resultsContainer.style.display = "none";
+            }
+        });
 
+        const params = new URLSearchParams(window.location.search);
+        const programId = params.get('id');
 
-        //add new recipt
         fetch('ConsoleApplication1/programs.json')
             .then(response => response.json())
             .then(data => {
-                const container = document.getElementById('programs-container');
-                data.forEach(programs => {
-                    const programsElement = document.createElement('div');
-                    programsElement.innerHTML = ` 
-                        <div class="card">
-                            <img src="${programs.images}"> <!-- картинка программы -->
-
-                            <div class="programs-info">
-                                <h1>${programs.title}</h1> <!-- название программы -->
-
-                                <h2># ${programs.description}</h2> <!-- описание программы -->
-
-                                <div class="programs-info__item">
-                                    <i class="fas fa-clock"></i>
-                                    <span>Продолжительность: ${programs.duration}</span>
-                                </div> <!-- время -->
-                                
-                               
-                                
-                                <div class="button_1">
-                                    <button><a href="pitaniepage.html?id=${programs.id}">Подробнее</a></button>
-                                </div> <!-- кнопка подробнее -->
-
-
-                            </div>   
-                        </div>
-                    `;
+                const program = data.find(r => r.id == programId);
+                if (program) {
                     
+                    document.getElementById('timeprogram').textContent = program.duration;
+                    document.getElementById('desctitle').textContent = program.title;
+                    document.getElementById('imageid').src = program.images;
+                    document.getElementById('program-instructions').textContent = program.instructions;
+                    
+                } else {
+                    document.body.innerHTML = '<p>Программа не найдена.</p>';
+                }
+            })
+            .catch(error => console.error('Error fetching the program data:', error));
 
-                    container.appendChild(programsElement);
-                });
-            });
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const animatedElements = document.querySelectorAll(".card");
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Элемент в зоне видимости — добавляем класс
-                        entry.target.classList.add("show");
-                        observer.unobserve(entry.target); // Отключаем наблюдение за этим элементом
-                    } else {
-                        // Для невидимых элементов (опционально)
-                        entry.target.classList.remove("show");
-                    }
-                });
-            }, {
-                threshold: 0.1 // Процент видимости элемента, после которого срабатывает анимация
-            });
-
-            animatedElements.forEach(element => observer.observe(element));
-        });
 
     </script>
+
+    
 </body>
 </html>

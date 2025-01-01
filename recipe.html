@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-    <title>Kunilaria</title>
+    <title>Recipe</title>
 </head>
 
 
@@ -29,10 +29,10 @@
             
 
             <nav class="navbar-links" id="navbar-links1">
-                <a href="index.html">Главная</a> 
+                <a href="/index.html">Главная</a> 
                 <a href="recipes.html">Рецепты</a>
-                <a href="pitanie.html">Питание</a>
-                <a href="contact.html">Контакты</a>
+                <a href="/pitanie.html">Питание</a>
+                <a href="/contact.html">Контакты</a>
             </nav>
         </header>
     </nav>
@@ -61,7 +61,7 @@
                 </div> <!-- количество -->
             </div>
             
-            <img src="https://ekaterinburg.biskvitdvor.ru/upload/iblock/d35/d35c4f9135ad3fe4b95066f73843d077.jpg" alt="">
+            <img id="imageid" alt="">
             
 
             <h3>Ингредиенты</h3>
@@ -88,9 +88,9 @@
                 <div class="footer-content">
                     <h4>Кулинария</h4>
                     <ul>
-                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="/index.html">Главная</a></li>
                         <li><a href="ConsoleApplication1/recipes.html">Рецепты</a></li>
-                        <li><a href="pitanie.html">Питание</a></li>
+                        <li><a href="/pitanie.html">Питание</a></li>
                         <li><a href="#">Контакты</a></li>
                     </ul>
                 </div>
@@ -108,9 +108,9 @@
                         <h4>Также мы</h4>
                         <div class="footer-icons">
                             <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"><i class='bx bxl-youtube'></i></a>
-                            <a href=""><i class='bx bxl-gmail'></i></a>
-                            <a href=""><i class='bx bxl-telegram'></i></a>
-                            <a href=""><i class='bx bxl-instagram' ></i></a>    
+                            <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTJGLzsFnjNxpQbvfsvZtlbDJgRvxlDNQCxzvRtSjCLQNBZGxMwhnnlVSRDVBCMSZNmhrL"><i class='bx bxl-gmail'></i></a>
+                            <a href="https://web.telegram.org/k/#@stikval"><i class='bx bxl-telegram'></i></a>
+                            <a href="https://www.instagram.com/wiayass/"><i class='bx bxl-instagram' ></i></a>   
                         </div>
                 </div>
 
@@ -153,6 +153,7 @@
             .then(data => {
                 const recipe = data.find(r => r.id == recipeId);
                 if (recipe) {
+                    document.getElementById('imageid').src = recipe.images;
                     document.getElementById('count_ingredients').textContent = `${recipe.ingredients.length}`;
                     document.getElementById('timerecipe').textContent = recipe.duration;
                     document.getElementById('desctitle').textContent = recipe.description;

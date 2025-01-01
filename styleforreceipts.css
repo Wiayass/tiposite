@@ -169,8 +169,9 @@ body {
 
 
 /* Основной контент */
-
-
+main {
+    margin-bottom: 20rem;
+}
 
 
 /* Карточки */
@@ -281,9 +282,9 @@ body {
 /* footer */
 
 .footer-container{
-    
 	max-width: 1170px;
-	margin:auto;
+	margin: auto;
+    
 }
 .rows{
 	display: flex;
@@ -549,7 +550,7 @@ ul{
         border-radius: .7rem;
     }
 
-   
+    
     .footer-content {
         width: 50%;
         margin-bottom: 30px;
@@ -572,4 +573,3 @@ ul{
     }
 
 }
-

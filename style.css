@@ -802,16 +802,28 @@ button:hover {
 .feedback img{
     width: 24rem;
     margin-left: 47rem;
-    margin-top: -90rem;
+    margin-top: -10rem;
 }
 
-.feedback .forms iframe{
+.forms button {
     width: 30rem;
-    height: 30rem;
-    color: #F4A261;
+    height: 2rem;
+    margin-left: 5rem;
+    background-color: #F4A261;
+    border-radius: 1rem;
     border: none;
 }
 
+.forms button a{
+    font-size: 1.2rem;
+    font-family: 'Bitter', sans-serif;
+    color: #fff;
+    border: none;
+}
+
+.forms button:hover{
+    color: #4E3620;
+}
 
 
 /* footer */
@@ -1153,13 +1165,12 @@ ul{
 
 
     .feedback img{
-        margin: auto;
+        width: 50%;
+        margin: 2rem auto;
         align-items: center;
     }
 
-    .forms iframe{
-        margin: auto;
-    }
+    
 
     .footer-content {
         margin: auto 2.5rem;
@@ -1303,13 +1314,16 @@ ul{
 
 
     .feedback img{
-        margin: auto;
+        width: 100%;
+        margin: 2rem auto;
         align-items: center;
     }
 
-    .forms iframe{
+    .forms button{
+        width: 100%;
         margin: auto;
     }
+    
 
 
     
