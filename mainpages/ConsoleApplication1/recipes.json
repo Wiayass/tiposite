@@ -1,0 +1,129 @@
+[
+    {
+        "count_ingredients": 2,
+        "description": "выпечка",
+        "duration": "30 min",
+        "id": 1,
+        "images": "https://ekaterinburg.biskvitdvor.ru/upload/iblock/d35/d35c4f9135ad3fe4b95066f73843d077.jpg",
+        "ingredients": [
+            "negr",
+            "pena"
+        ],
+        "instructions": "negr + pena",
+        "title": "Negr v pene"
+    },
+    {
+        "count_ingredients": 3,
+        "description": "десерты",
+        "duration": "30 min",
+        "id": 2,
+        "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Gwp-7O0I7dtvTJK8mhE1DevKvoydWvjqWQ&s",
+        "ingredients": [
+            "milk",
+            "bread",
+            "ice cream"
+        ],
+        "instructions": "milk",
+        "title": "Ice cream"
+    },
+    {
+        "count_ingredients": 3,
+        "description": "десерты",
+        "duration": "30 min",
+        "id": 3,
+        "images": "https://arbuz.kz/image/s3/arbuz-kz-products/268125-morozhenoe_oreo_263_g.jpg?w=460&h=460&_c=1732185838",
+        "ingredients": [
+            "yukfuf",
+            "yukfyuiof",
+            "tifty"
+        ],
+        "instructions": "ylgyulig",
+        "title": "Oreo"
+    },
+    {
+        "count_ingredients": 6,
+        "description": "vipechka",
+        "duration": "40min",
+        "id": 4,
+        "images": "https://eda.ru/images/RecipePhoto/190x190/brauni-brownie_20955_photo_29166.webp",
+        "ingredients": [
+            "chocolate",
+            "milk",
+            "flour",
+            "butter",
+            "sugar",
+            "nuts"
+        ],
+        "instructions": "fpklpf",
+        "title": "Brownie"
+    },
+    {
+        "count_ingredients": 5,
+        "description": "sadsd",
+        "duration": "sadd",
+        "id": 5,
+        "images": "sadasd",
+        "ingredients": [
+            "asdasd",
+            "as",
+            "d",
+            "asd",
+            "asd"
+        ],
+        "instructions": "asdsdada",
+        "title": "dsd"
+    },
+    {
+        "count_ingredients": 6,
+        "description": "erfer",
+        "duration": "f",
+        "id": 6,
+        "images": "erf",
+        "ingredients": [
+            "er",
+            "fref",
+            "e",
+            "fr",
+            "fe",
+            "f"
+        ],
+        "instructions": "erf",
+        "title": "fefr"
+    },
+    {
+        "count_ingredients": 5,
+        "description": "gliugkhl;h",
+        "duration": "40min",
+        "id": 7,
+        "images": "https://eda.ru/images/RecipePhoto/190x190/sirniki-iz-tvoroga_18506_photo_147696.webp",
+        "ingredients": [
+            "tvorog",
+            "eggs",
+            "flour",
+            "sugar",
+            "oil"
+        ],
+        "instructions": "fgklyhjglghjkj",
+        "title": "Cheesecake"
+    },
+    {
+        "count_ingredients": 9,
+        "description": "fefefef",
+        "duration": "4hour + 1hour",
+        "id": 8,
+        "images": "fgdgdg",
+        "ingredients": [
+            "njinobhf",
+            "",
+            "g",
+            "gh",
+            "fh",
+            "fg",
+            "hg",
+            "",
+            "fhh"
+        ],
+        "instructions": "dfsfsdf",
+        "title": "Nigger"
+    }
+]
