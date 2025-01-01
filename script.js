@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Fetch the product data
-fetch('ConsoleApplication1/recipes.json')
+fetch('recipes.json')
 .then(response => response.json())
 .then(data => {
     const searchBar = document.getElementById('search-bar');
