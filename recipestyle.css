@@ -1,0 +1,527 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oswald:wght@200..700&display=swap');
+/*Ru language*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f9f5ef;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 35rem;
+    /*background-color: #C9A66B;*/
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+
+
+.navbar-logo {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: #8D9777;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #a2ae88;
+}
+
+
+
+/* Общие стили */
+
+.navbar-menu-icon {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 24px;
+}
+
+
+
+
+.navbar-menu-icon .line {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    margin-left: -1rem;
+    margin-top: -.3rem;
+    background-color: #4E3620;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Позиция линий */
+.navbar-menu-icon .line:nth-child(1) {
+    top: 0;
+}
+
+.navbar-menu-icon .line:nth-child(2) {
+    top: 10px;
+}
+
+.navbar-menu-icon .line:nth-child(3) {
+    top: 20px;
+}
+
+/* Состояние крестика */
+.navbar-menu-icon.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.navbar-menu-icon.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-menu-icon.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
+
+
+/* Позиция линий */
+.navbar-menu-icon .line:nth-child(1) {
+    top: 0;
+}
+
+.navbar-menu-icon .line:nth-child(2) {
+    top: 10px;
+}
+
+.navbar-menu-icon .line:nth-child(3) {
+    top: 20px;
+}
+
+/* Состояние крестика */
+.navbar-menu-icon.active .line:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.navbar-menu-icon.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-menu-icon.active .line:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+    /* Основной контент */
+main {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+}
+
+
+.desctitle {
+    font-family: "Bitter", cursive;
+    font-size: 3rem;
+    color: #4E3620;
+    text-align: center;
+    margin: 20rem auto;
+}
+
+
+.recipeform{
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    align-items: center;
+    margin-top: -15rem;
+    margin-bottom: 10rem;
+}
+
+.recipeform h1{
+    font-family: "Bitter", cursive;
+    font-size: 3rem;
+    color: #4E3620;
+    text-align: center;
+    margin: 1rem;
+}
+
+.recipe-details {
+    display: flex; /* Используем flexbox */
+    align-items: center;
+}
+
+
+
+
+.recipecount, .recipetime{
+    font-family: "Bitter", cursive;
+    font-size: 1rem;
+    color: #4E3620;
+    margin: 2rem auto;
+}
+
+
+.recipeform img{
+    width: 25rem;
+    align-items: center;
+    margin: auto;
+}
+
+.recipeform h3{
+    font-family: "Bitter", cursive;
+    font-size: 2rem;
+    color: #4E3620;
+    text-align: left;
+    margin: 1rem 3rem;
+}
+
+.recipeform ul{
+    font-family: "Bitter", cursive;
+    font-size: 1.5rem;
+    color: #4E3620;
+    text-align: left;
+    margin: 1rem 4rem;
+}
+
+.recipeform p{
+    font-family: "Bitter", cursive;
+    font-size: 1.5rem;
+    color: #4E3620;
+    text-align: left;
+    margin: 1rem 4rem;
+}
+
+
+
+
+
+.recipeform a{
+    font-family: "Bitter", cursive;
+    font-size: 2.5rem;
+    color: #4E3620;
+    text-align: left;
+    margin: 1rem 3rem;
+}
+
+.recipeform a:hover{
+    cursor: pointer;
+}
+
+/* footer */
+
+.footer-container{
+    
+	max-width: 1170px;
+	margin:auto;
+}
+.rows{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+    width: 100%;
+	background-color: #4E3620;
+    padding: 70px 0;
+}
+.footer-content{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-content h4{
+	font-size: 18px;
+	color: #F4A261;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-content h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #8D9777;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-content ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-content ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #8D9777;
+	text-decoration: none;
+	font-weight: 300;
+	color: #fff;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-content ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+.footer-content .footer-icons a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-content .footer-icons a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+
+
+
+
+
+.footer-bottom {
+    background-color: #432e1a;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+
+.footer-bottom p{
+    color: #F4A261;
+    margin: auto;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.footer-bottom .designed {
+    color: #ccc;
+    font-family: "Lavishly Yours", cursive;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+
+@media (max-width: 1920px) {
+    .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 20rem;
+        /*background-color: #C9A66B;*/
+        color: white;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+}
+
+
+
+
+@media (max-width: 1366px) {
+
+    .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 10rem;
+        /*background-color: #C9A66B;*/
+        color: white;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    main{
+        width: 90%;
+    
+    }
+    
+    
+    
+}
+
+
+@media (max-width: 1024px) {
+    .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5rem;
+        /*background-color: #C9A66B;*/
+        color: white;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    main{
+        width: 90%;
+        align-items: center;
+    }
+    
+    
+}
+
+
+
+
+/* Адаптация для мобильных */
+@media  (max-width: 768px) {
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f5ef;
+        color: #333;
+    }
+    
+    /*navbar*/
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .navbar-logo img {
+        order: 1; /* Логотип переместится в начало */
+        margin-left: -.5rem;
+        width: 7rem;
+    }
+
+    .navbar-menu-icon {
+        display: block; /* Показываем иконку меню */
+        order: 2;
+    }
+
+    .navbar-links {
+        display: none; /* Скрываем ссылки */
+        flex-direction: column;
+        gap: 1;
+        position: absolute;
+        top: 6rem; /* Расположение под навбаром */
+        left: 0;
+        width: 100%;
+        background-color: #4E3620;
+        padding: 1rem 0;
+        transform: translateY(-20px); /* Слегка смещаем меню вверх */
+        pointer-events: none; /* Блокируем клики, пока меню скрыто */
+        transition: all;
+        
+    }
+
+    .navbar-links a {
+        padding: 0.5rem 1rem;
+        color: #fff;
+        text-align: center;
+        display: block;
+    }
+
+    .navbar-links a:hover{
+        color: #F4A261;
+    }
+
+    .navbar-links.active {
+        display: flex;  /*Показываем ссылки при активации */
+        opacity: 1;
+        transform: translateY(0); /* Возвращаем меню на место */
+        pointer-events: all; /* Разрешаем клики */
+    }
+    
+    
+
+
+    .footer-content {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+
+}
+
+
+@media  (max-width: 430px){
+
+    .desctitle h1{
+        width: 70%;
+        font-size: 5rem;
+    }
+
+    .recipeform img{
+        width: 100%;
+    }
+
+
+
+    .recipeform a{
+        font-size: 1.5rem;
+    }
+}
