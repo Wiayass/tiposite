@@ -178,7 +178,7 @@ getRecipesBtn.addEventListener("click", () => {
         // Если список пуст, показываем сообщение с изображением
         recipesOutput.innerHTML = `
             <img 
-                src="photo_2024-11-29_19-09-29.jpg" 
+                src="images/photo_2024-11-29_19-09-29.jpg" 
                 alt="Предупреждение" 
                 style="width: 100%; border-radius: 8px;">
         `;
