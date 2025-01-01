@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рецепты</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .recipe { margin-bottom: 20px; }
+        .recipe a { text-decoration: none; color: blue; }
+    </style>
+</head>
+<body>
+    <h1>Рецепты</h1>
+    <div id="recipes-container"></div>
+    <script>
+        fetch('recipes.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('recipes-container');
+                data.forEach(recipe => {
+                    const recipeElement = document.createElement('div');
+                    recipeElement.classList.add('recipe');
+                    recipeElement.innerHTML = `
+                        <h2><a href="testrecipe.html?id=${recipe.id}">${recipe.title}</a></h2>
+                        <p>${recipe.description}</p>
+                    `;
+                    container.appendChild(recipeElement);
+                });
+            });
+    </script>
+</body>
+</html>
