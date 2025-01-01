@@ -36,7 +36,7 @@ let cart = [];
 
 
 
-// Получаем элементы
+// Получаем элементы Navbar
 const menuToggle1 = document.getElementById('menu-toggle1');
 const navbarLinks1 = document.getElementById('navbar-links1');
 
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Fetch the product data
-fetch('recipes.json')
+fetch('ConsoleApplication1/recipes.json')
 .then(response => response.json())
 .then(data => {
     const searchBar = document.getElementById('search-bar');
@@ -100,7 +100,7 @@ fetch('recipes.json')
                     resultItem.classList.add('search-result-item');
                     resultItem.textContent = product.title;
                     resultItem.addEventListener('click', () => {
-                        window.location.href = `recipe.html?id=${product.id}`;
+                        window.location.href = `ConsoleApplication1/recipe.html?id=${product.id}`;
                     });
                     resultsContainer.appendChild(resultItem);
                 });
