@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-    <title>Recipe</title>
+    <title>Контакты</title>
 
     <style>
-        
         @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oswald:wght@200..700&display=swap');
         /*Ru language*/
@@ -33,17 +31,15 @@
         html {
             scroll-behavior: smooth;
         }
+
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
             background-color: #f9f5ef;
         }
-
         .navbar {
             position: absolute;
             top: 0;
@@ -169,104 +165,108 @@
             transform: translateY(-10px) rotate(-45deg);
         }
 
-            /* Основной контент */
-        main {
+        /* mainpart */
+
+        main{
             width: 100%;
             max-width: 80rem;
             margin: auto;
-            align-items: center;
         }
 
-
-        .desctitle {
-            font-family: "Bitter", cursive;
-            font-size: 3rem;
-            color: #4E3620;
-            text-align: center;
-            margin: 20rem auto;
-        }
-
-
-        .programform{
-            background-color: #fff;
+        .block{
             width: 100%;
-            border-radius: 10px;
             height: auto;
-            align-items: center;
-            margin-top: -15rem;
-            margin-bottom: 10rem;
+            padding: 5rem;
+            margin-top: 20rem;
+            border-radius: 1rem;
+            border-left: 1rem solid #F4A261;
+            background-color: #fff;
+        }
+        .block h1{
+            margin: auto;
+            color: #4E3620;
+            font-size: 4rem;
         }
 
-        .programform h1{
-            font-family: "Bitter", cursive;
-            font-size: 3rem;
+        .block p{
+            margin: 3rem auto;
             color: #4E3620;
+            font-size: 1.5rem;
+        }
+        
+        .gitblocks{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(13rem, 3fr)); /* 250px / 16 */
+            gap: 3rem; /* 20px / 16 */
+        }
+
+        .card {
+            margin: auto;
+            align-items: center;
+            border:none; /* 1px / 16 */
+            border-radius: 1rem;
             text-align: center;
-            margin: 1rem;
+            padding: .5rem;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .card img{
+            background-size: cover;
+            width: 15rem;
+            height: 15rem;
+        }
+
+        .card h1{
+            font-size: 2.5rem;
+            color: #8D9777;
+        }
+
+        .card:hover {
+            transform: translateY(-0.3125rem); /* 5px / 16 */
+        }
+
+        .imagesf{
+            width: 100%;
+            margin-top: 5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(13rem, 3fr)); /* 250px / 16 */
+            gap: 1.25rem; /* 20px / 16 */
+        }
+
+        .imagesf img {
+            margin: auto;
+            background-size: cover;
+            width: 30rem;
+            height: 30rem;
+        }
+
+
+        .contacts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(13rem, 3fr)); /* 250px / 16 */
+            gap: 1.25rem; /* 20px / 16 */
+            margin: 5rem auto;
+            width: 100%;
+            padding: 1rem;
+            border-radius: 1rem;
+            border-left: 1rem solid #F4A261;
+            background-color: #fff;
+        }
+
+        .phonenumber {
+            width: 50%;
+            height: auto;
+            margin: auto;
         }
 
         
 
-        .program-details {
-            margin: auto;
-            align-items: center;
-        }
 
-        .programform h3{
-            font-family: "Bitter", cursive;
-            font-size: 4rem;
-            color: #4E3620;
-            text-align: left;
-            margin: 1rem 3rem;
-        }
-
-
-
-
-        .program-time{
-            font-family: "Bitter", cursive;
-            font-size: 1.5rem;
-            color: #4E3620;
-            margin:2rem 6rem;
-            align-items: center;
-        }
-
-
-        .programform img{
-            width: 100%;
-            height: 30rem;
-            align-items: center;
-            margin: auto;
-        }
-
-        .programform ul{
-            font-family: "Bitter", cursive;
-            font-size: 1.5rem;
-            color: #4E3620;
-            margin: 2rem 7rem;
-        }
-
-       
-
-
-
-
-        .programform a{
-            font-family: "Bitter", cursive;
-            font-size: 2.5rem;
-            color: #4E3620;
-            text-align: left;
-            margin: 1rem 3rem;
-        }
-
-        .programform a:hover{
-            cursor: pointer;
-        }
 
         /* footer */
 
         .footer-container{
-            
             max-width: 1170px;
             margin:auto;
         }
@@ -283,8 +283,8 @@
             padding: 70px 0;
         }
         .footer-content{
-        width: 25%;
-        padding: 0 15px;
+            width: 25%;
+            padding: 0 15px;
         }
         .footer-content h4{
             font-size: 18px;
@@ -366,7 +366,6 @@
             font-weight: 600;
         }
 
-
         @media (max-width: 1920px) {
             .navbar {
                 position: absolute;
@@ -382,11 +381,7 @@
                 color: white;
                 font-family: "Montserrat", sans-serif;
             }
-            
         }
-
-
-
 
         @media (max-width: 1366px) {
 
@@ -404,20 +399,16 @@
                 color: white;
                 font-family: "Montserrat", sans-serif;
             }
-            
+
+
+
             main{
                 width: 90%;
-            
             }
-            
-            
-            
+
         }
-
-
         @media (max-width: 1024px) {
             .navbar {
-                position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
@@ -431,32 +422,32 @@
                 font-family: "Montserrat", sans-serif;
             }
             
+            
+            
+
             main{
-                width: 90%;
+                width: 80%;
                 align-items: center;
             }
+
             
-            
+
+            .imagesf img{
+                width: 20rem;
+                height: 20rem;
+            }
+
+            .footer-content {
+                margin: auto 2.5rem;
+            }
         }
 
-
-
-
-        /* Адаптация для мобильных */
         @media  (max-width: 768px) {
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f9f5ef;
-                color: #333;
-            }
-            
             /*navbar*/
             .navbar {
                 flex-direction: row;
                 justify-content: space-between;
-                padding: 0.5rem 1rem;
+                padding: 0.5rem 1.5rem;
                 font-family: "Montserrat", sans-serif;
             }
 
@@ -506,56 +497,73 @@
             }
             
             
+            main {
+                width: 80%;
+                margin-top: 5rem;
+                align-items: center;
+            }
 
+
+            .gitblocks {
+                margin-bottom: 2rem;
+                gap: 5rem;
+            }
+
+            .imagesf img{
+                width: 15rem;
+                height: 15rem;
+            }
 
             .footer-content {
                 width: 50%;
                 margin-bottom: 30px;
             }
+        }
 
+        @media  (max-width: 430px) {
+            main{
+                width: 90%;
+            }
+
+            .block {
+                padding: 2rem;
+            }
+
+            .card h1{
+                margin: auto;
+            }
+
+            .phonenumber{
+                padding: 1rem;
+                width: 100%;
+            }
+
+            .imagesf{
+                width: 100%;
+                margin:2rem  auto;
+            }
+
+            .imagesf img{
+                width: 20rem;
+                height: 20rem;
+            }
 
         }
 
-
-        @media  (max-width: 430px){
-
-            .desctitle h1{
-                width: 70%;
-                font-size: 4rem;
-            }
-
-            .programform ul{
-                font-family: "Bitter", cursive;
-                font-size: 1.5rem;
-                color: #4E3620;
-                margin: 2rem 2rem;
-            }
-
-            .programform a{
-                font-family: "Bitter", cursive;
-                font-size: 1.7rem;
-                color: #4E3620;
-                align-items: center;
-                margin: 1rem auto;
-            }
-
-            .programform a:hover{
-                cursor: pointer;
-            }
-
+        @media  (max-width: 412px){
             
         }
+
     </style>
+
 </head>
-
-
 <body>
 
     <!--NAVBAR-->
     <nav>
         <header class="navbar">
             <div class="navbar-logo">
-                <img src="https://i.ibb.co.com/FK2LLBB/logo-with-transparency-and-text-removebg-preview.png" alt="logo-with-transparency-and-text-removebg-preview" border="0">
+                <img src="https://i.ibb.co.com/FK2LLBB/logo-with-transparency-and-text-removebg-preview.png" alt="index.html">
             </div>
             
             <button class="navbar-menu-icon" id="menu-toggle1">
@@ -566,41 +574,74 @@
             
 
             <nav class="navbar-links" id="navbar-links1">
-                <a href="/index.html">Главная</a> 
+                <a href="index.html">Главная</a> 
                 <a href="ConsoleApplication1/recipes.html">Рецепты</a>
-                <a href="/pitanie.html">Питание</a>
-                <a href="/contact.html">Контакты</a>
+                <a href="pitanie.html">Питание</a>
+                <a href="contact.html">Контакты</a>
             </nav>
         </header>
     </nav>
 
-    <!--END NAVBAR-->
-
-    <div class="desctitle">
-        <h1 id="desctitle"></h1>
-    </div>
-
+    <!--mainpart-->
     <main>
         
-        <div class="programform">
 
-            <img id="imageid" alt="">
-            <div class="program-details">
-                <div class="program-time">
-                    
-                    <i class="fas fa-clock"></i><span id="timeprogram"></span>
-                </div> <!-- время приготовления -->
+        <div class="block">
+            <h1>Контакты</h1>
+            <p>Вы также можете написать нам если у вас есть какие нибудь предложения
+                или советы, мы рады вас услышать! Мы также публикуем наши проекты в GitHub если вам интересно,
+                то  GitHub каждого можете посмотреть ниже.
+            </p>
+            
+            <div class="gitblocks">
+                <div class="card">
+                    <a href="https://github.com/Wiayass">
+                        <img src="images/kaoru.jpeg" alt="">
+                        <h1>Wiayass</h1>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="">
+                        <img src="" alt="">
+                        <h1>StIkVaL</h1>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="https://github.com/Qoziwe">
+                        <img src="images/108534680.jpeg" alt="">
+                        <h1>Qoziwe</h1>
+                    </a>
+                </div>
+
+                <p></p>
+
             </div>
             
             
-            <h3>Что нужно делать?</h3>
-            <ul id="program-instructions"></ul>
 
-
-            <a href="pitanie.html">Назад к питаниям</a>
         </div>
-        
+
+        <div class="imagesf">
+            <img src="images/!.jpeg" alt="">
+            <img src="images/ззка.jpeg" alt="">
+        </div>
+
+        <div class="contacts">
+            <div class="phonenumber">
+                <h1>Контакты</h1>
+                <p>Если у вас есть вопросы, пожалуйста, свяжитесь с нами по номеру телефона либо по почте:)</p>
+            </div>
+
+            <div class="phonenumber">
+                <p>Телефон: +7 705 628 7952</p>
+                <p>Почта: danialmadiyarov@gmail.com</p>
+            </div>
+            
+            
+
+        </div>
     </main>
+
 
     <!--FOOTER-->
 
@@ -613,9 +654,9 @@
                 <div class="footer-content">
                     <h4>Кулинария</h4>
                     <ul>
-                        <li><a href="/index.html">Главная</a></li>
+                        <li><a href="index.html">Главная</a></li>
                         <li><a href="ConsoleApplication1/recipes.html">Рецепты</a></li>
-                        <li><a href="/pitanie.html">Питание</a></li>
+                        <li><a href="pitanie.html">Питание</a></li>
                         <li><a href="#">Контакты</a></li>
                     </ul>
                 </div>
@@ -635,7 +676,7 @@
                             <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"><i class='bx bxl-youtube'></i></a>
                             <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTJGLzsFnjNxpQbvfsvZtlbDJgRvxlDNQCxzvRtSjCLQNBZGxMwhnnlVSRDVBCMSZNmhrL"><i class='bx bxl-gmail'></i></a>
                             <a href="https://web.telegram.org/k/#@stikval"><i class='bx bxl-telegram'></i></a>
-                            <a href="https://www.instagram.com/wiayass/"><i class='bx bxl-instagram' ></i></a>  
+                            <a href="https://www.instagram.com/wiayass/"><i class='bx bxl-instagram' ></i></a>    
                         </div>
                 </div>
 
@@ -648,11 +689,10 @@
     <div class="footer-bottom">
         <p>Copyright &copy;2024 Designed by <span class="designed">Farid & Danial</span></p>
     </div>
-
+    
 
     <script>
-
-        // Получаем элементы Navbar
+        // Получаем элементы
         const menuToggle1 = document.getElementById('menu-toggle1');
         const navbarLinks1 = document.getElementById('navbar-links1');
 
@@ -661,40 +701,6 @@
             menuToggle1.classList.toggle('active'); // Анимация иконки
             navbarLinks1.classList.toggle('active'); // Плавное меню
         });
-
-
-        // Закрытие списка подсказок при клике вне поля
-        document.addEventListener("click", (e) => {
-            if (!e.target.closest(".search-container")) {
-                resultsContainer.style.display = "none";
-            }
-        });
-
-        const params = new URLSearchParams(window.location.search);
-        const programId = params.get('id');
-
-        fetch('ConsoleApplication1/programs.json')
-            .then(response => response.json())
-            .then(data => {
-                const program = data.find(r => r.id == programId);
-                if (program) {
-                    
-                    document.getElementById('timeprogram').textContent = program.duration;
-                    document.getElementById('desctitle').textContent = program.title;
-                    document.getElementById('imageid').src = program.images;
-                    document.getElementById('program-instructions').textContent = program.instructions;
-                    
-                } else {
-                    document.body.innerHTML = '<p>Программа не найдена.</p>';
-                }
-            })
-            .catch(error => console.error('Error fetching the program data:', error));
-
-
-
-
     </script>
-
-    
 </body>
 </html>

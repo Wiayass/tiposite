@@ -200,7 +200,6 @@
             height: auto;
             background-color: #fff;
             transition: transform 0.3s ease;
-            cursor: pointer;
             margin-top: 5rem;
             align-items: center;
         }
@@ -578,7 +577,7 @@
 
             <nav class="navbar-links" id="navbar-links1">
                 <a href="index.html">Главная</a> 
-                <a href="recipes.html">Рецепты</a>
+                <a href="ConsoleApplication1/recipes.html">Рецепты</a>
                 <a href="pitanie.html">Питание</a>
                 <a href="contact.html">Контакты</a>
             </nav>
@@ -613,7 +612,7 @@
                     <h4>Кулинария</h4>
                     <ul>
                         <li><a href="index.html">Главная</a></li>
-                        <li><a href="recipes.html">Рецепты</a></li>
+                        <li><a href="ConsoleApplication1/recipes.html">Рецепты</a></li>
                         <li><a href="pitanie.html">Питание</a></li>
                         <li><a href="#">Контакты</a></li>
                     </ul>
@@ -666,7 +665,7 @@
 
 
         //add new recipt
-        fetch('programs.json')
+        fetch('ConsoleApplication1/programs.json')
             .then(response => response.json())
             .then(data => {
                 const container = document.getElementById('programs-container');

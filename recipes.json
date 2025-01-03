@@ -6,9 +6,9 @@
         "id": 1,
         "images": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzrH33VMjqzCeGj6b7HbIdwA89t50c6lxd7w&s",
         "ingredients": [
-            "negr",
-            "penf",
-            "pena"
+            "Яйца", 
+            "Молоко", 
+            "Сыр"
         ],
         "instructions": "negr + pena",
         "title": "Negr v pene"
@@ -20,13 +20,43 @@
         "id": 2,
         "images": "https://www.allrecipes.com/thmb/GSiVp8ogaeOvWDua-AJ_S9QaN_s=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/AR-9599-Quick-Easy-Brownies-ddmfs-4x3-697df57aa40a45f8a7bdb3a089eee2e5.jpg",
         "ingredients": [
-            "flour",
-            "eggs",
-            "chocolate",
-            "milk",
-            "oil"
+            "Мука", 
+            "Молоко", 
+            "Яйца", 
+            "Сахар"
         ],
         "instructions": "dqwedqdd",
         "title": "gregege"
+    },
+    {
+        "count_ingredients": 9,
+        "description": "sdcscs",
+        "duration": "csdcdsc",
+        "id": 3,
+        "images": "cdscsd",
+        "ingredients": [
+            "Мука", "Молоко", "Яйца", "Сахар", "Масло", "Творог", "Картофель", "Помидоры", "Лук",
+            "Чеснок", "Капуста", "Перец", "Морковь", "Гречка", "Рис", "Макароны", "Сыр", "Грибы", "Сметана", "Мед" 
+        ],
+        "instructions": "csdcdsc",
+        "title": "sdcfdws"
+    },
+    {
+        "count_ingredients": 7,
+        "description": "выпечка, сладости",
+        "duration": "3часа+1час",
+        "id": 4,
+        "images": "https://images.unian.net/photos/2020_07/thumb_files/1200_0_1594640431-9859.jpg",
+        "ingredients": [
+            "молоко",
+            "мука",
+            "яйца",
+            "сметана",
+            "мед",
+            "масло",
+            "твоя мамаша"
+        ],
+        "instructions": "берете молоко и яйца смешиваете друг с лругом после добавляете муку 300 грамм и смешиваете после надо добавить дрожи и оставит тесто в покое на несколько минут а ой это уже рецепт хлеба",
+        "title": "Торт Наполеон"
     }
 ]

@@ -1,17 +1,11 @@
 // Массив с продуктами
 let products = [
     "Мука", "Молоко", "Яйца", "Сахар", "Масло", "Творог", "Картофель", "Помидоры", "Лук",
-    "Чеснок", "Капуста", "Перец", "Морковь", "Гречка", "Рис", "Макароны", "Сыр", "Грибы"
+    "Чеснок", "Капуста", "Перец", "Морковь", "Гречка", "Рис", "Макароны", "Сыр", "Грибы", "Сметана", "Мед"
     // Дополните список по необходимости
 ];
 
-// Пример рецептов
-const recipes = [
-    { name: "Омлет", ingredients: ["Яйца", "Молоко", "Соль"] },
-    { name: "Салат", ingredients: ["Помидоры", "Огурцы", "Лук", "Масло"] },
-    { name: "Каша", ingredients: ["Гречка", "Молоко", "Сахар"] },
-    { name: "Пицца", ingredients: ["Мука", "Сыр", "Томатный соус", "Грибы"] }
-];
+
 
 
 
@@ -31,8 +25,7 @@ const cartList = document.getElementById("cart-list");
 const recipesOutput = document.getElementById("recipes-output");
 const getRecipesBtn = document.getElementById("get-recipes-btn");
 
-// Массив для хранения выбранных продуктов
-let cart = [];
+
 
 
 
@@ -166,57 +159,40 @@ productSearchBar.addEventListener("input", () => {
 });
 
 
+// Массив для хранения выбранных продуктов
+let cart = [];
 
 
-// Событие для кнопки "Получить рецепты"
 
-recipesOutput.style.display = "none";
-
-// Функция для обработки кнопки "Получить рецепты"
-getRecipesBtn.addEventListener("click", () => {
-    if (cartList.children.length === 0) {
-        // Если список пуст, показываем сообщение с изображением
-        recipesOutput.innerHTML = `
-            <img 
-                src="photo_2024-11-29_19-09-29.jpg" 
-                alt="Предупреждение" 
-                style="width: 100%; border-radius: 8px;">
-        `;
-        recipesOutput.style.display = "block"; // Делаем элемент видимым
-
-        // Небольшая задержка для запуска анимации
-        setTimeout(() => {
-            recipesOutput.classList.add("active"); // Выдвигаем табличку
-        }, 10);
-
-        // Убираем сообщение через 3 секунды
-        setTimeout(() => {
-            recipesOutput.classList.remove("active"); // Скрываем табличку
-            setTimeout(() => {
-                recipesOutput.style.display = "none"; // Полностью убираем из DOM
-            }, 500); // Ждем завершения анимации
-        }, 3000);
-    } else {
-        // Если в списке есть продукты, перенаправляем на recipes.html
-        window.location.href = "recipes.html";
+// Функция для загрузки рецептов из файла recipes.json
+async function loadRecipes() {
+    try {
+        const response = await fetch("ConsoleApplication1/recipes.json");
+        if (!response.ok) throw new Error("Не удалось загрузить рецепты");
+        const recipes = await response.json();
+        return recipes;
+    } catch (error) {
+        console.error("Ошибка загрузки рецептов:", error);
+        return [];
     }
-});
+}
 
-
-
-
-
-
-
-
-
-
+// Функция для нахождения подходящих рецептов
+async function findRecipes(selectedProducts) {
+    const recipes = await loadRecipes();
+    // Фильтрация рецептов, содержащих выбранные продукты
+    return recipes.filter(recipe => {
+        const recipeIngredients = recipe.ingredients.map(ingredient => ingredient.toLowerCase());
+        return selectedProducts.every(product => recipeIngredients.includes(product.toLowerCase()));
+    });
+}
 
 
 // Функция для добавления продукта в корзину
 function addToCart(product) {
     if (!cart.includes(product)) {
         // Создаем элемент списка
+        cart.push(product);
         const li = document.createElement("li");
         li.style.display = "flex";
         li.style.justifyContent = "space-between";
@@ -241,6 +217,7 @@ function addToCart(product) {
         // Добавляем обработчик для удаления продукта
         removeBtn.addEventListener("click", () => {
             cartList.removeChild(li); // Удаляем элемент списка
+            cart = cart.filter(item => item !== product); // Удаляем продукт из массива
         });
 
         // Вставляем название продукта и кнопку удаления в элемент списка
@@ -259,6 +236,49 @@ function addToCart(product) {
         }
     })
 }
+
+
+
+
+// Обработчик кнопки "Получить рецепты"
+getRecipesBtn.addEventListener("click", async () => {
+    if (cart.length === 0) {
+        // Если корзина пуста, показываем предупреждение
+        recipesOutput.innerHTML = `
+            <img 
+                src="images/photo_2024-11-29_19-09-29.jpg" 
+                alt="Предупреждение" 
+                style="width: 100%; border-radius: 8px;">
+        `;
+        recipesOutput.style.display = "block";
+        setTimeout(() => {
+            recipesOutput.classList.add("active");
+        }, 10);
+
+        setTimeout(() => {
+            recipesOutput.classList.remove("active");
+            setTimeout(() => {
+                recipesOutput.style.display = "none";
+            }, 500);
+        }, 3000);
+    } else {
+        
+        const matchedRecipes = await findRecipes(cart); // Находим подходящие рецепты
+        if (cart.length > 0 && matchedRecipes.length > 0) {
+            localStorage.setItem("matchedRecipes", JSON.stringify(matchedRecipes));
+            localStorage.setItem("cartProducts", JSON.stringify(cart)); // Сохраняем список в localStorage
+            window.location.href = "search.html"; // Переходим на другую страницу
+        } else {
+            alert("Выберите хотя бы один продукт!");
+        }
+
+        
+    }
+});
+
+
+
+
 
 
 

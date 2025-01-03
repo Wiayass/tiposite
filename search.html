@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
-    <title>Recipe</title>
-
+    <title>Recipes</title>
     <style>
-        
         @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Oswald:wght@200..700&display=swap');
         /*Ru language*/
@@ -169,106 +166,141 @@
             transform: translateY(-10px) rotate(-45deg);
         }
 
-            /* Основной контент */
+
+
+        .recipestitle{
+            width: 60%;
+            font-family: "Oswald", sans-serif;
+            font-size: 2.5rem;
+            color: #8D9777;
+            margin-top: 20rem;
+            margin-bottom: 2rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+
+        /* Основной контент */
         main {
             width: 100%;
             max-width: 80rem;
-            margin: auto;
+            margin-bottom: 20rem;
+        }
+
+
+        /* Карточки */
+
+        #recipes-container{
+            display: grid;
+            grid-template-rows: repeat(1, 1fr); /* 3 колонки одинаковой ширины */
+            row-gap: 2rem; /* Отступы между строками */
+            margin: 5rem auto;
             align-items: center;
         }
 
 
-        .desctitle {
-            font-family: "Bitter", cursive;
-            font-size: 3rem;
-            color: #4E3620;
-            text-align: center;
-            margin: 20rem auto;
-        }
 
-
-        .programform{
+        .card {
+            width: 50rem;
+            height: 20rem;
             background-color: #fff;
-            width: 100%;
-            border-radius: 10px;
-            height: auto;
+            transition: transform 0.3s ease;
+            position: relative; /* Ensure positioning context for child elements */
+            margin-top: 5rem;
+            margin-left: auto;
+            margin-right: auto;
             align-items: center;
-            margin-top: -15rem;
-            margin-bottom: 10rem;
         }
 
-        .programform h1{
-            font-family: "Bitter", cursive;
-            font-size: 3rem;
+        .card:hover {
+            transform: translateY(-0.3125rem); /* 5px / 16 */
+        }
+
+        .card img {
+            width: 20rem;
+            height: 20rem;
+            margin: auto;
+        }
+
+
+
+        .card .recipe-info {
+            margin:-19rem 22rem ; /*Центрирование блока */
+            padding: 2rem;
+            width: 50%; /* Оптимальная ширина для читабельности */
+            background-color: #f9f4ef;  /*Светлый фон */
+            border-left: 4px solid #F4A261; /* Цветная полоска для акцента */
+            border-radius: 8px; /* Закругленные углы */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+        }
+
+        .recipe-info h1{
+            font-family: "Montserrat", sans-serif;
+            font-size: 2rem;
             color: #4E3620;
+            margin:.5rem auto;
+        }
+
+        .recipe-info h2{
+            font-family: "Bitter", sans-serif;
+            font-size: 1.2rem;
+            color: #4E3620;
+            margin: .5rem auto;
+        }
+
+
+        .recipe-info__item{
+            color: #432e1a;
+            align-items: center;
+            margin: auto;
+            font-size: 1.15rem;
+        }
+
+        .recipe-info h3{
+            font-family: "Bitter", sans-serif;
+            font-size: 1.2rem;
+            color: #4E3620;
+            margin: 1rem auto;
+            
+        }
+
+        .button_1 button{
+            margin: auto;
+            width: 20rem;
+            height: 3rem;
+            border: none;
+            background-color: #8D9777;
+            border-radius: .7rem;
+        }
+
+        .button_1 a{
+            color: #fff;
             text-align: center;
-            margin: 1rem;
+            font-size: 1.2rem;
+            font-weight: 450;
+            font-family: "Bitter", sans-serif;
         }
 
-        
-
-        .program-details {
-            margin: auto;
-            align-items: center;
-        }
-
-        .programform h3{
-            font-family: "Bitter", cursive;
-            font-size: 4rem;
-            color: #4E3620;
-            text-align: left;
-            margin: 1rem 3rem;
-        }
-
-
-
-
-        .program-time{
-            font-family: "Bitter", cursive;
-            font-size: 1.5rem;
-            color: #4E3620;
-            margin:2rem 6rem;
-            align-items: center;
-        }
-
-
-        .programform img{
-            width: 100%;
-            height: 30rem;
-            align-items: center;
-            margin: auto;
-        }
-
-        .programform ul{
-            font-family: "Bitter", cursive;
-            font-size: 1.5rem;
-            color: #4E3620;
-            margin: 2rem 7rem;
-        }
-
-       
-
-
-
-
-        .programform a{
-            font-family: "Bitter", cursive;
-            font-size: 2.5rem;
-            color: #4E3620;
-            text-align: left;
-            margin: 1rem 3rem;
-        }
-
-        .programform a:hover{
+        .button_1 button:hover{
+            background-color: #F4A261;
             cursor: pointer;
         }
+
+
+
+
+
+
+
+
 
         /* footer */
 
         .footer-container{
-            
             max-width: 1170px;
-            margin:auto;
+            margin: auto;
+            
         }
         .rows{
             display: flex;
@@ -344,6 +376,7 @@
 
 
 
+
         .footer-bottom {
             background-color: #432e1a;
             margin-bottom: 0;
@@ -367,7 +400,8 @@
         }
 
 
-        @media (max-width: 1920px) {
+
+        @media (max-width: 1920px){
             .navbar {
                 position: absolute;
                 top: 0;
@@ -377,19 +411,15 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 1rem 20rem;
+                padding: 1rem 25rem;
                 /*background-color: #C9A66B;*/
                 color: white;
                 font-family: "Montserrat", sans-serif;
             }
-            
+
         }
 
-
-
-
-        @media (max-width: 1366px) {
-
+        @media (max-width: 1366px){
             .navbar {
                 position: absolute;
                 top: 0;
@@ -399,23 +429,15 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                padding: 1rem 10rem;
+                padding: 1rem 15rem;
                 /*background-color: #C9A66B;*/
                 color: white;
                 font-family: "Montserrat", sans-serif;
             }
             
-            main{
-                width: 90%;
-            
-            }
-            
-            
-            
         }
 
-
-        @media (max-width: 1024px) {
+        @media (max-width: 1024px){
             .navbar {
                 position: absolute;
                 top: 0;
@@ -430,28 +452,17 @@
                 color: white;
                 font-family: "Montserrat", sans-serif;
             }
-            
-            main{
-                width: 90%;
-                align-items: center;
+
+            .footer-content{
+                width: 30%;
+                padding: 0 3rem;
             }
-            
             
         }
 
 
-
-
         /* Адаптация для мобильных */
         @media  (max-width: 768px) {
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f9f5ef;
-                color: #333;
-            }
-            
             /*navbar*/
             .navbar {
                 flex-direction: row;
@@ -504,53 +515,86 @@
                 transform: translateY(0); /* Возвращаем меню на место */
                 pointer-events: all; /* Разрешаем клики */
             }
-            
-            
 
 
+            main {
+                width: 100%;
+                margin-top: 15rem;
+                text-align: center;
+            }
+
+
+            #recipes-container{
+                display: grid;
+                grid-template-rows: repeat(1, 1fr); /* 3 колонки одинаковой ширины */
+                row-gap: 25rem; /* Отступы между строками */
+                align-items: center;
+            }
+
+            .card {
+                width: 23rem;
+                height: auto;
+                margin: auto;
+                margin-top: -10rem;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+
+            .card img {
+                width: 20rem;
+                height: 20rem;
+                margin: auto;
+            }
+
+            .card .recipe-info {
+                margin: auto; /*Центрирование блока */
+                padding: 2rem;
+                width: 100%; /* Оптимальная ширина для читабельности */
+                background-color: #f9f4ef;  /*Светлый фон */
+                border-left: 4px solid #F4A261; /* Цветная полоска для акцента */
+                border-radius: 8px; /* Закругленные углы */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+            }
+
+            
+            .button_1 button{
+                margin: auto;
+                width: 15rem;
+                height: 3rem;
+                border: none;
+                background-color: #8D9777;
+                border-radius: .7rem;
+            }
+
+            
             .footer-content {
                 width: 50%;
                 margin-bottom: 30px;
             }
 
-
-        }
-
-
-        @media  (max-width: 430px){
-
-            .desctitle h1{
-                width: 70%;
-                font-size: 4rem;
-            }
-
-            .programform ul{
-                font-family: "Bitter", cursive;
-                font-size: 1.5rem;
-                color: #4E3620;
-                margin: 2rem 2rem;
-            }
-
-            .programform a{
-                font-family: "Bitter", cursive;
-                font-size: 1.7rem;
-                color: #4E3620;
-                align-items: center;
-                margin: 1rem auto;
-            }
-
-            .programform a:hover{
-                cursor: pointer;
-            }
-
             
+
+
         }
+
+        @media (max-width: 430px) {
+            .recipestitle{
+                width: 80%;
+                font-size: 1.5rem;
+                margin-top: 10rem;
+            }
+            
+            .footer-content {
+                width: 70%;
+                margin-bottom: 30px;
+            }
+        }
+
     </style>
 </head>
-
-
 <body>
-
+    <!-- ШАПКА -->
+     
     <!--NAVBAR-->
     <nav>
         <header class="navbar">
@@ -566,41 +610,24 @@
             
 
             <nav class="navbar-links" id="navbar-links1">
-                <a href="/index.html">Главная</a> 
-                <a href="ConsoleApplication1/recipes.html">Рецепты</a>
-                <a href="/pitanie.html">Питание</a>
-                <a href="/contact.html">Контакты</a>
+                <a href="index.html">Главная</a> 
+                <a href="recipes.html">Рецепты</a>
+                <a href="pitanie.html">Питание</a>
+                <a href="contact.html">Контакты</a>
             </nav>
         </header>
     </nav>
-
     <!--END NAVBAR-->
 
-    <div class="desctitle">
-        <h1 id="desctitle"></h1>
+    <!--Title-->
+    <div class="recipestitle">
+        <h1></h1>
     </div>
 
     <main>
-        
-        <div class="programform">
-
-            <img id="imageid" alt="">
-            <div class="program-details">
-                <div class="program-time">
-                    
-                    <i class="fas fa-clock"></i><span id="timeprogram"></span>
-                </div> <!-- время приготовления -->
-            </div>
-            
-            
-            <h3>Что нужно делать?</h3>
-            <ul id="program-instructions"></ul>
-
-
-            <a href="pitanie.html">Назад к питаниям</a>
-        </div>
-        
+        <div id="recipes-container"></div>
     </main>
+
 
     <!--FOOTER-->
 
@@ -613,9 +640,9 @@
                 <div class="footer-content">
                     <h4>Кулинария</h4>
                     <ul>
-                        <li><a href="/index.html">Главная</a></li>
-                        <li><a href="ConsoleApplication1/recipes.html">Рецепты</a></li>
-                        <li><a href="/pitanie.html">Питание</a></li>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="recipes.html">Рецепты</a></li>
+                        <li><a href="pitanie.html">Питание</a></li>
                         <li><a href="#">Контакты</a></li>
                     </ul>
                 </div>
@@ -635,7 +662,7 @@
                             <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"><i class='bx bxl-youtube'></i></a>
                             <a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJTJGLzsFnjNxpQbvfsvZtlbDJgRvxlDNQCxzvRtSjCLQNBZGxMwhnnlVSRDVBCMSZNmhrL"><i class='bx bxl-gmail'></i></a>
                             <a href="https://web.telegram.org/k/#@stikval"><i class='bx bxl-telegram'></i></a>
-                            <a href="https://www.instagram.com/wiayass/"><i class='bx bxl-instagram' ></i></a>  
+                            <a href="https://www.instagram.com/wiayass/"><i class='bx bxl-instagram' ></i></a>    
                         </div>
                 </div>
 
@@ -649,9 +676,8 @@
         <p>Copyright &copy;2024 Designed by <span class="designed">Farid & Danial</span></p>
     </div>
 
-
     <script>
-
+        
         // Получаем элементы Navbar
         const menuToggle1 = document.getElementById('menu-toggle1');
         const navbarLinks1 = document.getElementById('navbar-links1');
@@ -670,31 +696,81 @@
             }
         });
 
-        const params = new URLSearchParams(window.location.search);
-        const programId = params.get('id');
 
-        fetch('ConsoleApplication1/programs.json')
-            .then(response => response.json())
-            .then(data => {
-                const program = data.find(r => r.id == programId);
-                if (program) {
-                    
-                    document.getElementById('timeprogram').textContent = program.duration;
-                    document.getElementById('desctitle').textContent = program.title;
-                    document.getElementById('imageid').src = program.images;
-                    document.getElementById('program-instructions').textContent = program.instructions;
-                    
-                } else {
-                    document.body.innerHTML = '<p>Программа не найдена.</p>';
-                }
-            })
-            .catch(error => console.error('Error fetching the program data:', error));
+        // Получение списка продуктов из localStorage
+        const selectedProducts = JSON.parse(localStorage.getItem("cartProducts")) || [];
+
+        // Элемент для отображения заголовка или списка
+        const recipesTitle = document.querySelector(".recipestitle h1");
+
+        if (selectedProducts.length > 0) {
+            recipesTitle.innerHTML = `Рецепты из ваших <br> выбранных продуктов: ${selectedProducts.join(", ")}`;
+        } else {
+            recipesTitle.innerHTML = `Вы не выбрали продукты! Вернитесь назад, чтобы выбрать.`;
+        }
+        
+
+        // Получаем данные из localStorage
+        const matchedRecipes = JSON.parse(localStorage.getItem("matchedRecipes") || "[]");
+
+        const recipesContainer = document.getElementById("recipes-container");
+
+        if (matchedRecipes.length === 0) {
+            recipesContainer.innerHTML = "<p>Нет подходящих рецептов</p>";
+        } else {
+            //add new recipt
+            fetch("ConsoleApplication1/recipes.json")
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('recipes-container');
+                    matchedRecipes.forEach(recipe => {
+                        const recipeElement = document.createElement('div');
+                        recipeElement.classList.add('card');
+                        recipeElement.innerHTML = ` 
+                                <img src="${recipe.images}"> <!-- картинка рецепта -->
+
+                                <div class="recipe-info">
+                                    <h1>${recipe.title}</h1> <!-- название рецепта -->
+
+                                    <h2># ${recipe.description}</h2> <!-- категория рецепта -->
+
+                                    <div class="recipe-info__item">
+                                        <i class="fas fa-clock"></i>
+                                        <span>${recipe.duration}</span>
+                                    </div> <!-- время приготовления -->
+                                    
+                                    <h3>
+                                        Ингредиенты: ${recipe.count_ingredients} 
+                                    </h3> <!-- количество ингредиентов -->
+
+                                    
+                                    
+                                    
+                                    <div class="button_1">
+                                        <button><a href="recipe.html?id=${recipe.id}">Подробнее</a></button>
+                                    </div> <!-- кнопка подробнее -->
 
 
+                                </div>   
 
+                                
+                                
+
+                                
+                                
+                            
+                            
+                        `;
+                        
+
+                        container.appendChild(recipeElement);
+                    });
+                });
+        }
+
+        
 
     </script>
 
-    
 </body>
 </html>

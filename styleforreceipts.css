@@ -170,6 +170,8 @@ body {
 
 /* Основной контент */
 main {
+    width: 100%;
+    max-width: 80rem;
     margin-bottom: 20rem;
 }
 
@@ -191,9 +193,8 @@ main {
     height: 20rem;
     background-color: #fff;
     transition: transform 0.3s ease;
-    cursor: pointer;
     position: relative; /* Ensure positioning context for child elements */
-    margin-top: 5rem;
+    margin:5rem auto;
     align-items: center;
 }
 
