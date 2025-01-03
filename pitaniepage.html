@@ -566,10 +566,10 @@
             
 
             <nav class="navbar-links" id="navbar-links1">
-                <a href="/index.html">Главная</a> 
-                <a href="ConsoleApplication1/recipes.html">Рецепты</a>
-                <a href="/pitanie.html">Питание</a>
-                <a href="/contact.html">Контакты</a>
+                <a href="index.html">Главная</a> 
+                <a href="recipes.html">Рецепты</a>
+                <a href="pitanie.html">Питание</a>
+                <a href="contact.html">Контакты</a>
             </nav>
         </header>
     </nav>
@@ -613,10 +613,10 @@
                 <div class="footer-content">
                     <h4>Кулинария</h4>
                     <ul>
-                        <li><a href="/index.html">Главная</a></li>
-                        <li><a href="ConsoleApplication1/recipes.html">Рецепты</a></li>
-                        <li><a href="/pitanie.html">Питание</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="recipes.html">Рецепты</a></li>
+                        <li><a href="pitanie.html">Питание</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
                     </ul>
                 </div>
 
@@ -673,7 +673,7 @@
         const params = new URLSearchParams(window.location.search);
         const programId = params.get('id');
 
-        fetch('ConsoleApplication1/programs.json')
+        fetch('programs.json')
             .then(response => response.json())
             .then(data => {
                 const program = data.find(r => r.id == programId);
