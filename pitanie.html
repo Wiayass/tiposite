@@ -577,7 +577,7 @@
 
             <nav class="navbar-links" id="navbar-links1">
                 <a href="index.html">Главная</a> 
-                <a href="ConsoleApplication1/recipes.html">Рецепты</a>
+                <a href="recipes.html">Рецепты</a>
                 <a href="pitanie.html">Питание</a>
                 <a href="contact.html">Контакты</a>
             </nav>
@@ -614,7 +614,7 @@
                         <li><a href="index.html">Главная</a></li>
                         <li><a href="ConsoleApplication1/recipes.html">Рецепты</a></li>
                         <li><a href="pitanie.html">Питание</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
                     </ul>
                 </div>
 
@@ -665,7 +665,7 @@
 
 
         //add new recipt
-        fetch('ConsoleApplication1/programs.json')
+        fetch('programs.json')
             .then(response => response.json())
             .then(data => {
                 const container = document.getElementById('programs-container');
