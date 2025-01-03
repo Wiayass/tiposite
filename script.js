@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // Fetch the product data
-fetch('ConsoleApplication1/recipes.json')
+fetch('recipes.json')
 .then(response => response.json())
 .then(data => {
     const searchBar = document.getElementById('search-bar');
@@ -93,7 +93,7 @@ fetch('ConsoleApplication1/recipes.json')
                     resultItem.classList.add('search-result-item');
                     resultItem.textContent = product.title;
                     resultItem.addEventListener('click', () => {
-                        window.location.href = `ConsoleApplication1/recipe.html?id=${product.id}`;
+                        window.location.href = `recipe.html?id=${product.id}`;
                     });
                     resultsContainer.appendChild(resultItem);
                 });
@@ -120,12 +120,6 @@ document.addEventListener("click", (e) => {
         resultsContainer.style.display = "none";
     }
 });
-
-
-
-
-
-
 
 // Функция для отображения результатов поиска продуктов for things
 productSearchBar.addEventListener("input", () => {
@@ -167,7 +161,7 @@ let cart = [];
 // Функция для загрузки рецептов из файла recipes.json
 async function loadRecipes() {
     try {
-        const response = await fetch("ConsoleApplication1/recipes.json");
+        const response = await fetch("recipes.json");
         if (!response.ok) throw new Error("Не удалось загрузить рецепты");
         const recipes = await response.json();
         return recipes;
@@ -307,12 +301,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animatedElements.forEach(element => observer.observe(element));
 });
-
-
-
-
-
-
 
 
 
